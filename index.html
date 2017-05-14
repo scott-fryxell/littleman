@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/application.css">
+    <meta charset="utf-8">
+    <title>Little Man</title>
+  </head>
+  <body>
+    <header>
+      <menu id='layout'>
+        <button name='flex'>flex</button>
+      </menu>
+    </header>
+    <main dropzone>
+      <details draggable>
+        <summary>
+          <h2>Style</h2>
+        </summary>
+        <style media="screen">
+          * {
+            outline:1px solid hsla(1 100 100 0.5);
+          }
+          main {
+            height: 100vh;
+          }
+        </style>
+      </details>
+      <details draggable>
+        <summary>
+          <h2>Script</h2>
+        </summary>
+        <script type="text/javascript" >
+          //document.querySelector("menu#layout  button[name=flex]").
+
+          document.body.addEventListener('keydown', function(keydown) {
+            var enter = 13;
+            if(keydown.keyCode == enter && keydown.metaKey) {
+              var main = document.querySelector("main")
+              if( main.isContentEditable ) {
+                main.setAttribute("contenteditable",  false);
+                console.warn("removed", main);
+              } else {
+                main.setAttribute("contenteditable",  true);
+                console.log('added', main);
+              }
+	          }
+          });
+        </script>
+      </details>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+:focus
+  outline:none
+
+body > header
+  user-select:none
+
+main style
+main script
+  display: block
+  background: #333
+  color: white
+  font: 13px/1.8 Monaco, Mono-Space
+  padding: 20px
+  white-space: pre
+
+body > main
+  user-select: none
+  &[contenteditable=true]
+    outline:2px solid red
+
+details
+  & > summary
+    text-decoration: underline
+    cursor: pointer
+    &::-webkit-details-marker
+      display:none
+  &[open] > summary
+    text-decoration: overline
