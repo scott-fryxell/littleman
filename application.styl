@@ -1,28 +1,46 @@
+@require "style/variables"
+@require "style/button"
+@require "style/details"
+@require 'style/main'
+
+*
+  transition: all 0.25s ease-out
+  padding:1vh 1vw
+
+html
+  margin:0
+  padding:0
+  font-size: 1rem
+  font-family: sans-serif
+  background: url(background.svg)
+  background-size: cover
+  background-repeat: no-repeat
+  color:dark
+
+body
+  padding:0
+  margin:0
+
 :focus
-  outline:none
+  outline:thin solid
+  // outline-color:highlight
+  margin: gutter
+
+h1,h2,h3,h4,h5,h6,summary
+  font-size:1.5rem
 
 body > header
   user-select:none
 
 main style
 main script
+  overflow: scroll;
   display: block
-  background: #333
+  background: dark
   color: white
-  font: 13px/1.8 Monaco, Mono-Space
-  padding: 20px
+  font: 1rem/1.66 Monaco, Mono-Space
+  padding: 0rem
+  margin: 0 1rem
   white-space: pre
-
-body > main
-  user-select: none
-  &[contenteditable=true]
-    outline:2px solid red
-
-details
-  & > summary
-    text-decoration: underline
-    cursor: pointer
-    &::-webkit-details-marker
-      display:none
-  &[open] > summary
-    text-decoration: overline
+  border-color: dark
+  border-radius: 0.33rem;

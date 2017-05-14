@@ -1,0 +1,16 @@
+details
+  padding:gutter
+  margin: gutter
+  border:0.15rem solid highlight
+  background: highlight
+  border-radius:0.25rem
+  & > summary
+    text-decoration: underline
+    cursor: pointer
+    &::-webkit-details-marker
+      display:none
+    &:focus
+      outline:none
+      border-bottom: 0.25rem solid highlight
+  &[open] > summary
+    text-decoration: overline

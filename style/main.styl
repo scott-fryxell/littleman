@@ -1,0 +1,9 @@
+body > main
+  user-select: none
+  &[contenteditable=true]
+    -webkit-box-shadow: inset 0px 0px 39px -8px red
+    -moz-box-shadow: inset 0px 0px 39px -8px red
+    box-shadow: inset 0px 0px 39px -8px red
+    &:focus
+      outline:none
+      margin: inherit

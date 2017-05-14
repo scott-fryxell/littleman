@@ -6,16 +6,9 @@
     <title>Little Man</title>
   </head>
   <body>
-    <header>
-      <menu id='layout'>
-        <button name='flex'>flex</button>
-      </menu>
-    </header>
-    <main dropzone>
-      <details draggable>
-        <summary>
-          <h2>Style</h2>
-        </summary>
+    <main>
+      <details>
+        <summary>Style</summary>
         <style media="screen">
           * {
             outline:1px solid hsla(1 100 100 0.5);
@@ -25,13 +18,9 @@
           }
         </style>
       </details>
-      <details draggable>
-        <summary>
-          <h2>Script</h2>
-        </summary>
+      <details>
+        <summary>Script</summary>
         <script type="text/javascript" >
-          //document.querySelector("menu#layout  button[name=flex]").
-
           document.body.addEventListener('keydown', function(keydown) {
             var enter = 13;
             if(keydown.keyCode == enter && keydown.metaKey) {
@@ -43,7 +32,7 @@
                 main.setAttribute("contenteditable",  true);
                 console.log('added', main);
               }
-	          }
+            }
           });
         </script>
       </details>
