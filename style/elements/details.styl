@@ -1,17 +1,22 @@
 details
+  overflow: hidden;
   padding:gutter
   margin: gutter
   border:0.15rem solid highlight
   background: highlight
   border-radius:0.25rem
+  position:relative
+
   & > summary
     padding: 2vh 2vw;
     text-decoration: underline
     cursor: pointer
     &::-webkit-details-marker
       display:none
-    // &:focus
-    //   // outline:none
-    //   border-bottom: 0.25rem solid highlight
-  &[open] > summary
-    text-decoration: none
+  &[open]
+    & > summary
+      text-decoration: none
+    & > *:not(summary)
+      tansition:min-height is eas-in
+      animation-name: fadeInDown
+      animation-duration: 0.5s

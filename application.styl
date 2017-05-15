@@ -1,10 +1,9 @@
-@require "style/variables"
-@require "style/button"
-@require "style/details"
-@require 'style/main'
+@require "style"
 
 *
   transition: all 0.25s ease-out
+  animation-duration: 1s;
+  animation-fill-mode: both;
   padding:1vh 1vw
 
 html
@@ -21,11 +20,6 @@ body
   padding:0
   margin:0
 
-:focus
-  outline:none
-  margin: gutter
-  border:0.1rem solid dark-text
-  border-radius:0.5rem
 
 h1,h2,h3,h4,h5,h6,summary
   font-size:1.5rem
