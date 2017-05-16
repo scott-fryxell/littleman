@@ -1,19 +1,15 @@
 body > main
-  ouline:none
   user-select: none
   border:none
+  margin:0
+  border: 0rem solid editor-on-color
+
   &[contenteditable=true]
-    // box-shadow: inset 0 -0.25rem 3rem -0.5rem dark
+    user-select: auto
     border: 1rem solid editor-on-color
     border-top: none
     border-bottom:none
-    border-radius: none
-    &:focus
-      outline:none
-      margin: inherit
-      border-radius: none
 
   &[contenteditable=false]
-    border: 0rem solid transparent
     border-top: none
     border-bottom:none

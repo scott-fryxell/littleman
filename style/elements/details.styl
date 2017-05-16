@@ -13,10 +13,9 @@ details
     cursor: pointer
     &::-webkit-details-marker
       display:none
+
   &[open]
     & > summary
       text-decoration: none
     & > *:not(summary)
-      tansition:min-height is eas-in
       animation-name: fadeInDown
-      animation-duration: 0.5s
