@@ -7,30 +7,43 @@
   padding:1vh 1vw
 
 html
-  outline: unset;
   padding:0
-  font-size: 1rem
-  font-family: sans-serif
+  margin: 0
+  font-size: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem) )
+  line-height: 1.44
+  font-family: 'Lato', sans-serif
   background: url(background.svg)
+  background-color: ghost
   background-size: cover
   background-repeat: no-repeat
   color:dark-text
+  -webkit-font-smoothing: antialiased
 
-body
+svg#logo
+  height:15vmin
   padding:0
   margin:0
+  vertical-align: baseline;
+
+a
+  display:inline-block
+  text-decoration: none
+  color: green
+  font-size:2rem
+  vertical-align: baseline
+
+body > header
+  display:flex;
+  flex-direction: row;
+  align-items: center
 
 h1,h2,h3,h4,h5,h6,summary
-  font-size:1.5rem
+  font-size:2rem
+  margin:0
+  padding:0
+  line-height: 1
+  vertical-align: baseline;
 
-main style
-main script
-  overflow: scroll;
-  display: block
-  background: dark
-  color: white
-  font: 1rem/1.66 Monaco, Mono-Space
-  margin: 1rem
-  white-space: pre
-  border-color: dark
-  border-radius: 0.33rem;
+p
+  padding:0
+  margin:0.75rem 0

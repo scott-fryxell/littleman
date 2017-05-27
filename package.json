@@ -1,0 +1,24 @@
+{
+  "name": "littleman",
+  "version": "1.0.0",
+  "description": "CMS ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scott-fryxell/littleman.git"
+  },
+  "author": "Scott Fryxell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scott-fryxell/littleman/issues"
+  },
+  "homepage": "https://github.com/scott-fryxell/littleman#readme",
+  "devDependencies": {
+    "webpack": "^2.5.1"
+  }
+}

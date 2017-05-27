@@ -1,39 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="/application.css">
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width">
+    <script type="text/javascript" src=application.js></script>
     <title>Little Man</title>
   </head>
   <body>
+    <header>
+      <svg id="logo">
+        <use xlink:href="application.svg#logo"/>
+      </svg>
+      <nav>
+        <a href="#stories">Stories</a>
+        <a href="#mayo">pants</a>
+      </nav>
+    </header>
     <main>
-      <details>
-        <summary>Style</summary>
+      <article>
+        <header>
+          <h1>Lorem ipsum dolor sit amet</h1>
+        </header>
+        <section>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit,
+          </p>
+          <p>
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+        </section>
+        <footer>
+
+        </footer>
+      </article>
+    </main>
+    <footer>
+      <details class="style">
+        <summary contenteditable="false">Style</summary>
         <style media="screen">
           * remove-me {
             outline: 1px solid hsla(57, 41%, 69%, 0.2);
           }
         </style>
       </details>
-      <details>
-        <summary>Script</summary>
+      <details class="script">
+        <summary contenteditable="false">Script</summary>
         <script type="text/javascript" >
           document.body.addEventListener('keydown', function(keydown) {
             var enter = 13;
             if(keydown.keyCode == enter && keydown.metaKey) {
-              var main = document.querySelector("main")
-              if( main.isContentEditable ) {
-                main.setAttribute("contenteditable",  false);
-                console.warn("removed", main);
+              var content = document.querySelector("body")
+              if( content.isContentEditable ) {
+                content.removeAttribute("contenteditable");
               } else {
-                main.setAttribute("contenteditable",  true);
-                console.log('added', main);
+                content.setAttribute("contenteditable",  true);
               }
             }
           });
         </script>
       </details>
-    </main>
+
+    </footer>
   </body>
 </html>
