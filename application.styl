@@ -4,38 +4,28 @@
   transition: all 0.25s ease-in
   animation-duration: 0.25s
   animation-fill-mode: both
-  padding:1vh 1vw
+  box-sizing: border-box
 
 html
   padding:0
   margin: 0
-  font-size: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem) )
+  height: 100vh
+  font-size: calc(1rem + (1.5em - 1em) * (100vw - 25em) / (50em - 25em) )
+  -webkit-font-smoothing: antialiased
   line-height: 1.44
   font-family: 'Lato', sans-serif
-  background: url(background.svg)
+
   background-color: ghost
   background-size: cover
   background-repeat: no-repeat
   color:dark-text
-  -webkit-font-smoothing: antialiased
-
-svg#logo
-  height:15vmin
-  padding:0
-  margin:0
-  vertical-align: baseline;
-
 a
   display:inline-block
   text-decoration: none
-  color: green
+  color: red
   font-size:2rem
   vertical-align: baseline
 
-body > header
-  display:flex;
-  flex-direction: row;
-  align-items: center
 
 h1,h2,h3,h4,h5,h6,summary
   font-size:2rem

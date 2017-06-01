@@ -22,11 +22,13 @@ details
 
 body
   & > footer >  details
+    visibility: none
     display :none
+    animation-delay: 0
 
   &[contenteditable] > footer >  details
+    visibility: visible;
     animation-name: fadeInDown
-    animation-delay: 1s
     display:block
 
     & style
