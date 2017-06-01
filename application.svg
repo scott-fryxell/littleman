@@ -1,6 +1,6 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMax meet">
 
-  <symbol id="branch" preserveAspectRatio="xMaxYMax slice">
+  <symbol id="branch"  preserveAspectRatio="xMaxYMax slice">
     <path d="M132,88 C132,82 0,0 0,0 C130,73 117,61 108,54 C91,40 71,28 50,16 C39,11 29,5 15,2 C11,0.64 5,0.88 0,0.88" id="Shape"></path>
     <path d="M132,88 C131,82 127,76 123,72 C86,46 129,77 112,65 C110,64 109,63 108,62 C100,57 93,52 84,49 L82,49" id="Shape"></path>
     <path d="M132,88 C132,84 129,80 127,77 C120,69 111,64 102,58" id="Shape"></path>
@@ -26,13 +26,13 @@
   </symbol>
 
   <symbol id="logo" viewBox="0 0 266 149" preserveAspectRatio="xMinYMin meet">
-    <use xlink:href='#branch' transform="translate(0.000000, 61.000000)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(78.194930, 90.864622) rotate(12.000000) translate(-78.194930, -90.864622) translate(11.694930, 46.864622)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(79.169229, 89.780818) rotate(14.000000) translate(-79.169229, -89.780818) translate(12.669229, 45.780818)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(164.711646, 72.553747) scale(-1, 1) rotate(32.000000) translate(-164.711646, -72.553747) translate(98.211646, 28.553747)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(199.500000, 104.000000) scale(-1, 1) translate(-199.500000, -104.000000) translate(133.000000, 60.000000)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(188.194930, 91.864622) scale(-1, 1) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero" stroke-width="0.15"/>
-    <use xlink:href='#branch' transform="translate(99.711646, 75.553747) rotate(32.000000) translate(-99.711646, -75.553747) translate(33.211646, 31.553747)" fill-rule="nonzero" stroke-width="0.15"/>
+    <use xlink:href='#branch' transform="translate(0.000000, 61.000000)" fill-rule="nonzero" />
+    <use xlink:href='#branch' transform="translate(78.194930, 90.864622) rotate(12.000000) translate(-78.194930, -90.864622) translate(11.694930, 46.864622)" fill-rule="nonzero" />
+    <use xlink:href='#branch' transform="translate(79.169229, 89.780818) rotate(14.000000) translate(-79.169229, -89.780818) translate(12.669229, 45.780818)" fill-rule="nonzero" />
+    <use xlink:href='#branch' transform="translate(164.711646, 72.553747) scale(-1, 1) rotate(32.000000) translate(-164.711646, -72.553747) translate(98.211646, 28.553747)" fill-rule="nonzero" />
+    <use xlink:href='#branch' transform="translate(199.500000, 104.000000) scale(-1, 1) translate(-199.500000, -104.000000) translate(133.000000, 60.000000)" fill-rule="nonzero" />
+    <use xlink:href='#branch' transform="translate(188.194930, 91.864622) scale(-1, 1) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero"/>
+    <use xlink:href='#branch' transform="translate(99.711646, 75.553747) rotate(32.000000) translate(-99.711646, -75.553747) translate(33.211646, 31.553747)" fill-rule="nonzero"/>
   </symbol>
 
 
