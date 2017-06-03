@@ -3,7 +3,7 @@ body
   user-select: none
   border:none
   margin:0
-  padding:0
+  fluid-size: padding
   border: 0rem solid editor-on-color
 
   &[contenteditable]
@@ -16,10 +16,12 @@ body > *
   display:flex
   flex-direction: row
   align-items: center
-  justify-content: center;
+  justify-content: space-around
 
 body > header
-
-  display:flex;
-  flex-direction: row;
-  align-items: center
+  fluid-size: margin-bottom
+  & > nav
+    display:flex
+    flex-direction:column
+    align-items:flex-start
+    justify-content:flex-start;

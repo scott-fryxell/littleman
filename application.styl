@@ -5,35 +5,33 @@
   animation-duration: 0.25s
   animation-fill-mode: both
   box-sizing: border-box
+  vertical-align: baseline;
 
 html
   padding:0
   margin: 0
-  height: 100vh
-  font-size: calc(1rem + (1.5em - 1em) * (100vw - 25em) / (50em - 25em) )
+  min-height: 100vh
   -webkit-font-smoothing: antialiased
+  fluid-size: font-size
   line-height: 1.44
   font-family: 'Lato', sans-serif
-
   background-color: ghost
   background-size: cover
   background-repeat: no-repeat
   color:dark-text
-a
-  display:inline-block
+
+nav > a
   text-decoration: none
   color: red
-  font-size:2rem
-  vertical-align: baseline
-
+  fluid-size: font-size
 
 h1,h2,h3,h4,h5,h6,summary
-  font-size:2rem
+  fluid-bigger: font-size
+  font-weight: normal
   margin:0
   padding:0
-  line-height: 1
-  vertical-align: baseline;
+  line-height: 1.22
 
 p
   padding:0
-  margin:0.75rem 0
+  fluid-size: margin-bottom
