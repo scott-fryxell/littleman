@@ -1,1 +1,22 @@
-calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem)
+fluid-size($properties, $min-value=1.17rem, $max-value=1.5rem, $min-vw=25rem, $max-vw=50rem)
+  // Renders: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem)
+  $min-value-stripped = remove-unit($min-value)
+  $max-value-stripped = remove-unit($max-value)
+  $min-vw-stripped    = remove-unit($min-vw)
+  $max-vw-stripped    = remove-unit($max-vw)
+
+  calculation = s('calc( %s + (%s - %s) * (100vw - %s) / (%s - %s) )', $min-value, $max-value-stripped, $min-value-stripped, $min-vw, $max-vw-stripped, $min-vw-stripped)
+
+  for $property in $properties
+    {$property}: $min-value
+
+  @media screen and (min-width: $min-vw)
+    for $property in $properties
+      {$property}: calculation
+
+  @media screen and (min-width: $max-vw)
+    for $property in $properties
+      {$property}: $max-value
+
+fluid-bigger($properties, $min-value=1.5rem, $max-value=2rem)
+  fluid-size($properties, $min-value, $max-value)
