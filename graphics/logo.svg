@@ -28,13 +28,14 @@
     <path d="M132,88 C132,84 132,86 128,78 C127,75 124,70 122,67 C117,59 118,60 111,51 C109,47 104,43 101,40 C96,37 91,32 85,29 C84,28 77,23 71,20 C55,9 36,0 32,0"></path>
     <path d="M132,88 C132,73 120,51 111,40 C107,35 103,31 98,26 C95,24 74,11 70,10"></path>
   </symbol>
+
   <symbol id="logo" stroke="#4FBF6C" stroke-width="0.5" fill="hsla(136, 47%, 53%, 0.5)" viewbox="0 0 300 200" preserveAspectRatio="xMaxYMax slice">
     <use xlink:href="#branch" opacity="0.65" transform="translate(107, 31) rotate(45)"/>
     <use xlink:href="#branch" opacity="0.35" transform="translate(208, 43) scale(-1, 1) rotate(-329)"/>
     <use xlink:href="#branch" opacity="0.36" transform="translate(36, 65) rotate(16)"/>
     <use xlink:href="#branch" opacity="0.66" transform="translate(58, 50) rotate(26)"/>
     <use xlink:href="#branch" opacity="0.56" transform="translate(220, 50) scale(-1, 1) rotate(26)"/>
-    <use xlink:href="#branch" opacity="0.7" transform="translate(7, 99)"/>
+    <use xlink:href="#branch" opacity="0.7"  transform="translate(7, 99)"/>
     <use xlink:href="#branch" opacity="0.75" transform="translate(271, 99) scale(-1, 1) "/>
   </symbol>
 
