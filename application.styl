@@ -1,7 +1,7 @@
 @require "style"
 
 *
-  transition: all 0.25s ease-out
+  transition: border 0.25s ease-out
   animation-duration: 0.25s
   animation-fill-mode: both
   box-sizing: border-box
@@ -17,13 +17,22 @@ html
   background-color: ghost
   background-size: cover
   background-repeat: no-repeat
-  color:dark-text
+  color:black
   user-select: none
 
-nav > a
+a
+  color: blue
+  font-size: 1em
   text-decoration: none
+  text-shadow: 0.2px 0px darken(blue, 50%)
+
+p > a
+  border-bottom: 1.5px solid green-fill
+
+nav > a
   color: red
   fluid-size: font-size
+  text-shadow: none
 
 h1,h2,h3,h4,h5,h6,summary
   fluid-bigger: font-size
@@ -35,4 +44,3 @@ h1,h2,h3,h4,h5,h6,summary
 p
   padding:0
   fluid-size: margin-bottom
-  user-select: text
