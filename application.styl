@@ -1,7 +1,7 @@
 @require "style"
 
 *
-  transition: border 0.25s ease-out
+  transition: border color margin padding width 0.25s ease-out
   animation-duration: 0.25s
   animation-fill-mode: both
   box-sizing: border-box
@@ -14,9 +14,7 @@ html
   fluid-size: font-size
   line-height: 1.44
   font-family: 'Lato', sans-serif
-  background-color: ghost
-  background-size: cover
-  background-repeat: no-repeat
+  background-color: white-fill
   color:black
   user-select: none
 
@@ -26,8 +24,23 @@ a
   text-decoration: none
   text-shadow: 0.2px 0px darken(blue, 50%)
 
+
 p > a
-  border-bottom: 1.5px solid green-fill
+  transition-property: all
+  transition-duration: 0.4s
+  transition-delay: 0.1s
+  border-bottom: 1px solid blue-fill
+  border-bottom-right-radius: 1px
+  border-bottom-left-radius: 1px
+
+  &:hover
+    transition-property: all
+    border-bottom: 1.5px solid blue
+    border-bottom-right-radius: 2px
+    border-bottom-left-radius: 2px
+
+
+
 
 nav > a
   color: red
