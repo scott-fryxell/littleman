@@ -24,17 +24,17 @@
     <path d="M132,88 C131,73 120,51 111,40 C107,35 103,31 98,26 C95,24 74,11 70,10"></path>
   </symbol>
 
-  <symbol id="logo" viewBox="0 0 266 149" preserveAspectRatio="xMinYMin slice">
+  <symbol id="logo" viewBox="0 0 266 149" preserveAspectRatio="xMidYMid meet">
     <g class='forward'>
       <use xlink:href='#branch' opacity="0.65" transform="translate(79, 91) scale(0.95, 0.90) rotate(12) translate(-79, -91) translate(15, 53)" />
       <use xlink:href='#branch' opacity="0.44" transform="rotate(14) scale(1, 0.90) translate(25, 15)" />
-      <use xlink:href='#branch' opacity="0.70" transform="translate(188.194930, 91.864622) scale(-1, 0.95) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero"/>
+      <use xlink:href='#branch' opacity="0.75" transform="translate(188.194930, 91.864622) scale(-1, 0.95) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero"/>
     </g>
 
 
     <g class='mid'>
       <use xlink:href='#branch' opacity="0.55"  transform="translate(0, 61)" />
-      <use xlink:href='#branch' opacity="0.56" transform="translate(200, 103) scale(-1, 0.90) translate(-200, -103) translate(133, 64)" />
+      <use xlink:href='#branch' opacity="0.56" transform="translate(200, 103) scale(-1, 0.90) translate(-200, -103) translate(135.5, 66)" />
     </g>
 
     <g class="back">
