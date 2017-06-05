@@ -26,21 +26,21 @@
 
   <symbol id="logo" viewBox="0 0 266 149" preserveAspectRatio="xMidYMid meet">
     <g class='forward'>
-      <use xlink:href='#branch' opacity="0.65" transform="translate(79, 91) scale(0.95, 0.90) rotate(12) translate(-79, -91) translate(15, 53)" />
-      <use xlink:href='#branch' opacity="0.44" transform="rotate(14) scale(1, 0.90) translate(25, 15)" />
-      <use xlink:href='#branch' opacity="0.75" transform="translate(188.194930, 91.864622) scale(-1, 0.95) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero"/>
+      <use xlink:href='#branch' opacity="0.83"  transform="translate(0, 61)" />
+      <use xlink:href='#branch' opacity="0.90" transform="translate(200, 103) scale(-1, 0.90) translate(-200, -103) translate(135.5, 66)" />
+
     </g>
 
-
     <g class='mid'>
-      <use xlink:href='#branch' opacity="0.55"  transform="translate(0, 61)" />
-      <use xlink:href='#branch' opacity="0.56" transform="translate(200, 103) scale(-1, 0.90) translate(-200, -103) translate(135.5, 66)" />
+      <use xlink:href='#branch' opacity="0.50" transform="translate(79, 91) scale(0.95, 0.90) rotate(12) translate(-79, -91) translate(15, 53)" />
+      <use xlink:href='#branch' opacity="0.35"  transform="rotate(28) scale(1, 0.50) translate(25, 5)" />
+      <use xlink:href='#branch' opacity="0.65" transform="translate(188.194930, 91.864622) scale(-1, 0.95) rotate(12.000000) translate(-188.194930, -91.864622) translate(121.694930, 47.864622)" fill-rule="nonzero"/>
     </g>
 
     <g class="back">
-      <use xlink:href='#branch' opacity="0.64" transform="translate(165, 73) scale(-1, 0.90) rotate(32) translate(-165, -73) translate(99, 29)" />
-      <use xlink:href='#branch' opacity="0.5" transform="translate(100, 76) rotate(32) translate(-100, -76) translate(33, 32)" fill-rule="nonzero"/>
-      <use xlink:href='#branch' opacity="0.52" transform="translate(165, 73) scale(-1, 0.75) rotate(53) translate(-165, -73) translate(115, 5)" />
+      <use xlink:href='#branch' opacity="0.45" transform="translate(165, 73) scale(-1, 0.90) rotate(32) translate(-165, -73) translate(99, 29)" />
+      <use xlink:href='#branch' opacity="0.45" transform="translate(100, 76) rotate(32) translate(-100, -76) translate(33, 32)" fill-rule="nonzero"/>
+      <use xlink:href='#branch' opacity="0.30" transform="translate(165, 73) scale(-1, 0.75) rotate(53) translate(-165, -73) translate(115, 5)" />
     </g>
 
   </symbol>
