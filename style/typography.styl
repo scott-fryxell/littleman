@@ -1,0 +1,39 @@
+// https://www.smashingmagazine.com/2016/05/fluid-typography/
+body
+  $mod_1 = 1.125
+  $mod_2 = 1.250
+
+  $h1-min = $mod_1 ** 4 * 1rem
+  $h1-max = $mod_2 ** 4 * 1rem
+
+  $h2-min = $mod_1 ** 3 * 1rem
+  $h2-max = $mod_2 ** 3 * 1rem
+
+  $h3-min = $mod_1 ** 2 * 1rem
+  $h3-max = $mod_2 ** 2 * 1rem
+
+  $h4-min = $mod_1 * 1rem
+  $h4-max = $mod_2 * 1rem
+
+  $h5-min: 1rem
+  $h5-max: 1rem
+
+  $h6-min: (1rem / $mod_1)
+  $h6-max: (1rem / $mod_2)
+
+  h1,h2,h3,h4,h5,h6,summary
+    fluid-size: max-width, 25rem, 34rem
+    line-height: 1
+
+  h1
+    fluid-size: font-size, $h1-min, $h1-max
+ 	h2
+    fluid-size: font-size, $h2-min, $h2-max
+ 	h3, summary, nav > a, menu > a, label
+    fluid-size: font-size, $h3-min, $h3-max
+ 	h4
+    fluid-size: font-size, $h4-min, $h4-max
+ 	h5
+    fluid-size: font-size, $h5-min, $h5-max
+ 	h6
+    fluid-size: font-size, $h6-min, $h6-max

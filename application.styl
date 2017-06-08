@@ -1,11 +1,15 @@
 @require "style"
 
 *
-  transition: border color margin padding width 0.25s ease-out
-  animation-duration: 0.25s
+  transition-timing-function: ease-out
+  transition-duration: 0.25s
+  transition-property: border color margin padding width
+  margin:0
+  padding:0
+  animation-duration: 0.5s
   animation-fill-mode: both
   box-sizing: border-box
-  vertical-align: baseline;
+  vertical-align: baseline
 
 html
   padding:0
@@ -24,36 +28,26 @@ a
   text-decoration: none
   text-shadow: 0.2px 0px darken(blue, 50%)
 
-
-p > a
-  transition-property: all
-  transition-duration: 0.4s
-  transition-delay: 0.1s
-  border-bottom: 1px solid blue-fill
-  border-bottom-right-radius: 1px
-  border-bottom-left-radius: 1px
-
-  &:hover
+p
+  padding:0
+  margin:0
+  fluid-size: max-width, 25rem, 34rem
+  fluid-size: margin-bottom
+  & > a
     transition-property: all
-    border-bottom: 1.5px solid blue
-    border-bottom-right-radius: 2px
-    border-bottom-left-radius: 2px
-
-
-
+    transition-duration: 0.8s
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s
+    border-bottom: 1px solid blue-fill
+    border-bottom-right-radius: 1px
+    border-bottom-left-radius: 1px
+    &:hover
+      transition-property: all
+      border-bottom: 1.35px solid blue
+      border-bottom-right-radius: 2px
+      border-bottom-left-radius: 2px
 
 nav > a
   color: red
   fluid-size: font-size
   text-shadow: none
-
-h1,h2,h3,h4,h5,h6,summary
-  fluid-bigger: font-size
-  // font-weight: normal
-  margin:0
-  padding:0
-  line-height: 1
-
-p
-  padding:0
-  fluid-size: margin-bottom
