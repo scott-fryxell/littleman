@@ -3,15 +3,21 @@ svg
   margin:0
 
 svg#logo
-  fluid-size width, 3rem, 3.25rem
-  fluid-size height, 1rem, 2.5rem
+  // margin-left:$baseline
+  height:$baseline * 2
+  width:$baseline * 3.5
+  margin-left: $baseline
   stroke:blue
   fill:green-fill
   opacity:0.4
-  position: fixed
   stroke-width:5
+  @media screen and (min-width: 60rem)
+    position: fixed
+    top:$baseline
+    left:0
 
 svg#hero
+  display: none
   z-index: -1
   width:100vw
   min-height: 100vh

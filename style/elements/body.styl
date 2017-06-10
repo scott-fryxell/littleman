@@ -1,17 +1,15 @@
 body
   min-height:100vh
   border:none
-  margin:0
   display:flex
   flex-direction: column
   align-items: center
-  justify-content: flex-start;
-  // fluid-size: padding-left padding-right
+  justify-content: flex-start
   border: 0rem solid editor-on-color
 
   &[contenteditable]
     user-select: auto
-    border: 1rem solid editor-on-color
+    border: $baseline solid editor-on-color
     border-top: none
     border-bottom:none
 
@@ -23,23 +21,18 @@ body > footer
   align-items: center
   justify-content: space-around
 
-
-body > main
 body > footer
-  fluid-size: padding-left padding-right, 1rem
-
-body > footer
-  flex-direction: column;
-
+  padding:$baseline
 
 body > header
   flex-direction: row
   justify-content: space-between
-  align-items: flex-start
-  fluid-size: padding
+  align-items: center;
   width: 100vw
-  height: 100vh
+  height: $baseline * 2
+  margin-bottom: $baseline
   & > nav
+    
     display:flex
     flex-direction:row
     align-items: center
@@ -47,4 +40,7 @@ body > header
     &: > a:first-child
       display: inline
     & > a
-      fluid-size: margin-right
+      margin-right:$baseline
+
+body > footer
+  flex-direction: column;

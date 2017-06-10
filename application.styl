@@ -1,53 +1,13 @@
 @require "style"
 
 *
+  margin:0
+  padding:0
+  box-sizing: border-box
+  vertical-align: baseline;
+
   transition-timing-function: ease-out
   transition-duration: 0.25s
-  transition-property: border color margin padding width
-  margin:0
-  padding:0
+  transition-property: border, color, margin, padding, width
   animation-duration: 0.5s
   animation-fill-mode: both
-  box-sizing: border-box
-  vertical-align: baseline
-
-html
-  padding:0
-  margin: 0
-  -webkit-font-smoothing: antialiased
-  fluid-size: font-size
-  line-height: 1.44
-  font-family: 'Lato', sans-serif
-  background-color: white-fill
-  color:black
-  user-select: none
-
-a
-  color: blue
-  font-size: 1em
-  text-decoration: none
-  text-shadow: 0.2px 0px darken(blue, 50%)
-
-p
-  padding:0
-  margin:0
-  fluid-size: max-width, 25rem, 34rem
-  fluid-size: margin-bottom
-  & > a
-    transition-property: all
-    transition-duration: 0.8s
-    transition-timing-function: ease-in-out;
-    transition-delay: 0.1s
-    border-bottom: 1px solid blue-fill
-    border-bottom-right-radius: 1px
-    border-bottom-left-radius: 1px
-    &:hover
-      transition-property: all
-      border-bottom: 1.35px solid blue
-      border-bottom-right-radius: 2px
-      border-bottom-left-radius: 2px
-
-nav > a
-  color: red
-  fluid-size: font-size
-  text-shadow: none

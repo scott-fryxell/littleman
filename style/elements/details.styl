@@ -1,14 +1,15 @@
 details
   width: 100vw
   overflow: hidden
-  fluid-size: padding
-  fluid-size: margin
+  padding: $baseline
+  margin-top: $baseline
   border:0.15rem solid highlight
   background: highlight
   border-radius:0.25rem
   position:relative
 
   & > summary
+    padding: $baseline
     text-decoration: underline
     cursor: pointer
     &::-webkit-details-marker
@@ -24,7 +25,7 @@ body
   & > footer >  details
     visibility: none
     display :none
-    animation-delay: 0
+    // animation-delay: 0
 
   &[contenteditable] > footer >  details
     visibility: visible;
@@ -35,10 +36,11 @@ body
     & script
       overflow: scroll;
       display: block
-      background: dark
-      color: white
+      background: black-fill
+      color: white-white
       font: 1rem/1.66 Monaco, Mono-Space
-      margin: 1rem
+      fluid-size: font-size
+      margin: $baseline
       white-space: pre
       border-color: dark
       border-radius: 0.33rem;

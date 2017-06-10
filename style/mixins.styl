@@ -1,4 +1,4 @@
-fluid-size($properties, $min-value=1rem, $max-value=1.25rem, $min-vw=25rem, $max-vw=40rem)
+fluid-size($properties, $min-value=1rem, $max-value=1.25rem, $min-vw=20rem, $max-vw=50rem)
   // Renders: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem)
   $min-value-stripped = remove-unit($min-value)
   $max-value-stripped = remove-unit($max-value)
@@ -17,3 +17,7 @@ fluid-size($properties, $min-value=1rem, $max-value=1.25rem, $min-vw=25rem, $max
   @media screen and (min-width: $max-vw)
     for $property in $properties
       {$property}: $max-value
+
+font-smoothing()
+  -webkit-font-smoothing: arguments
+  -moz-font-smoothing: arguments
