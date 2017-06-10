@@ -1,5 +1,6 @@
 // https://www.smashingmagazine.com/2016/05/fluid-typography/
-$baseline  = 1.563rem
+
+$baseline  = 1.33rem // vertical baseline
 
 $minFont   = 1rem
 $maxFont   = 1.563rem
@@ -15,8 +16,9 @@ $h5 = .8rem
 $h6 = .64rem
 
 //modular scale. for small and large screens
-$mod_1 = 1.125
-$mod_2 = 1.33
+// $mod_1 = 1.125
+$mod_1 = 1.25
+$mod_2 = 1.25
 
 $h1-min = $mod_1 ** 4 * 1rem
 $h1-max = $mod_2 ** 4 * 1rem
@@ -41,15 +43,17 @@ html
   line-height: $baseline
   fluid-size: font-size
   font-smoothing: antialiased
-  // text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility
 
   color:black
   background-color: white-fill
   user-select: none
 
-body
+body[contenteditable]
   background-image: linear-gradient(red 1px, transparent 1px) // development code
   background-size: 1px $baseline // development
+
+body
   padding:$baseline
   line-height: $baseline
 
@@ -66,7 +70,7 @@ body
   h1
     fluid-size: font-size, $h1-min, $h1-max
     line-height: $h1
-    margin-top: s('calc( (%s - %s) + %s )', $baseline, $h1, $baseline)
+    margin-top: s('calc( (%s - %s) + %s * 2)', $baseline, $h1, $baseline)
 
   h2
     fluid-size: font-size, $h2-min, $h2-max
@@ -77,20 +81,20 @@ body
     fluid-size: font-size, $h3-min, $h3-max
     line-height: $h3
   h3, summary
-    margin-top: s('calc( (%s - %s) + %s  * 2)', $baseline, $h3, $baseline)
+    margin-top: s('calc( (%s - %s) + %s)', $baseline, $h3, $baseline)
 
   h4, nav > a, menu > a, label
     fluid-size: font-size, $h4-min, $h4-max
     line-height: $h4
   h4
-    margin-top: s('calc( (%s - %s) + %s  * 2)', $baseline, $h4, $baseline)
+    margin-top: s('calc( (%s - %s) + %s  )', $baseline, $h4, $baseline)
 
   h5
     fluid-size: font-size, $h5-min, $h5-max
     line-height: $h5
-    margin-top: s('calc( (%s - %s) + %s  * 2)', $baseline, $h5, $baseline)
+    margin-top: s('calc( (%s - %s) )', $baseline, $h5, $baseline)
 
   h6
     fluid-size: font-size, $h6-min, $h6-max
     line-height: $h6
-    margin-top: s('calc( (%s - %s) + %s  * 2)', $baseline, $h6, $baseline)
+    margin-top: s('calc( (%s - %s) )', $baseline, $h6, $baseline)
