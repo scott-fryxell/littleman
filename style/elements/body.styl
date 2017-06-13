@@ -6,41 +6,78 @@ body
   align-items: center
   justify-content: flex-start
   border: 0rem solid editor-on-color
+  padding: base-line
+  line-height: base-line
 
   &[contenteditable]
+    background-image: linear-gradient(red 1px, transparent 1px)
+    background-size: 1px base-line
     user-select: auto
-    border: $baseline solid editor-on-color
+    border: base-line solid editor-on-color
     border-top: none
     border-bottom:none
+    padding-left: 0
+    padding-right: 0
 
-body > header
-body > main
-body > footer
-  display:flex
-  flex-direction: column
-  align-items: center
-  justify-content: space-around
+  & > svg#hero
+    display: none
+    z-index: -1
+    width: 100vw
+    min-height: base-line * 30rem
+    margin-bottom: base-line
+    position:absolute
+    top:0
+    left:0
+    opacity:1
+    fill:green-fill
+    stroke:blue-fill
+    stroke-width:0.5
 
-body > footer
-  padding:$baseline
+    & use:nth-child(2)
+      stroke:red
+      stroke-width:0.1
+      fill:transparent
 
-body > header
-  flex-direction: row
-  justify-content: space-between
-  align-items: center;
-  width: 100vw
-  height: $baseline * 2
-  margin-bottom: $baseline
-  & > nav
-    
+  & > header
+  & > main
+  & > footer
     display:flex
-    flex-direction:row
+    flex-direction: column
     align-items: center
-    justify-content: space-between;
-    &: > a:first-child
-      display: inline
-    & > a
-      margin-right:$baseline
+    justify-content: space-around
 
-body > footer
-  flex-direction: column;
+  & > footer
+    flex-direction: column
+    width: 100%
+    position: fixed
+    bottom:0
+    left:0
+
+  & > header
+    flex-direction: row
+    justify-content: space-between
+    align-items: center;
+    width: 100vw
+    height: base-line * 2
+    & svg
+      height:base-line * 2
+      width:base-line * 3.5
+      margin-left: base-line
+      stroke:blue
+      fill:green-fill
+      opacity:0.4
+      stroke-width:5
+      @media screen and (min-width: max-screen + 10rem)
+        position: fixed
+        top:base-line
+        left:0
+
+    & nav
+      display:flex
+      flex-direction:row
+      align-items: center
+      justify-content: space-between
+      &: > a:first-child
+        display: inline
+      & > a
+        margin-right:base-line
