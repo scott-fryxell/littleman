@@ -1,100 +1,80 @@
 // https://www.smashingmagazine.com/2016/05/fluid-typography/
 
-$baseline  = 1.33rem // vertical baseline
-
-$minFont   = 1rem
-$maxFont   = 1.563rem
-
-$minScreen = 20rem
-$maxScreen = 50rem
-
-$h1 = 1.953rem
+$h1 = 2rem
 $h2 = 1.563rem
 $h3 = 1.25rem
 $h4 = 1rem
 $h5 = .8rem
 $h6 = .64rem
 
-//modular scale. for small and large screens
-// $mod_1 = 1.125
-$mod_1 = 1.25
-$mod_2 = 1.25
 
-$h1-min = $mod_1 ** 4 * 1rem
-$h1-max = $mod_2 ** 4 * 1rem
+$h1-max = mod-large ** 4 * 1rem // 2.44140625rem
+$h1-min = mod-small ** 4 * 1rem // 1.601806640625rem
 
-$h2-min = $mod_1 ** 3 * 1rem
-$h2-max = $mod_2 ** 3 * 1rem
+$h2-max = mod-large ** 3 * 1rem // 1.953125rem
+$h2-min = mod-small ** 3 * 1rem // 1.423828125rem
 
-$h3-min = $mod_1 ** 2 * 1rem
-$h3-max = $mod_2 ** 2 * 1rem
+$h3-max = mod-large ** 2 * 1rem // 1.5625rem
+$h3-min = mod-small ** 2 * 1rem // 1.265625rem
 
-$h4-min = $mod_1 * 1rem
-$h4-max = $mod_2 * 1rem
+$h4-max = mod-large * 1rem // 1.25rem
+$h4-min = mod-small * 1rem // 1.125rem
 
 $h5-min= 1rem
 $h5-max= 1rem
 
-$h6-min= (1rem / $mod_1)
-$h6-max= (1rem / $mod_2)
+$h6-max= (1rem / mod-large) //.8rem
+$h6-min= (1rem / mod-small) //.8888888888888888rem
 
 html
   font-family: 'Lato', sans-serif
-  line-height: $baseline
+  line-height: base-line
   fluid-size: font-size
   font-smoothing: antialiased
   text-rendering: optimizeLegibility
-
   color:black
   background-color: white-fill
   user-select: none
 
-body[contenteditable]
-  background-image: linear-gradient(red 1px, transparent 1px) // development code
-  background-size: 1px $baseline // development
+p
+  line-height: base-line
+  margin-bottom: base-line
+  fluid-size: max-width, (base-line * 17), (base-line * 25)
 
-body
-  padding:$baseline
-  line-height: $baseline
+h1,h2,h3,h4,h5,h6
+  font-weight: 700
+  margin-bottom: base-line
 
-  p
-    line-height: $baseline
-    margin-bottom: $baseline
-    fluid-size: max-width, 25rem, 34rem
 
-  h1,h2,h3,h4,h5,h6,summary
-    font-weight: 700
-    margin-bottom:$baseline
-    fluid-size: max-width, 25rem, 34rem
+h1
+  fluid-size: font-size, $h1-min, $h1-max
+  line-height: $h1-max
+  margin-top: s('calc( (%s - %s) + %s * 2)', base-line, $h1-max, base-line)
 
-  h1
-    fluid-size: font-size, $h1-min, $h1-max
-    line-height: $h1
-    margin-top: s('calc( (%s - %s) + %s * 2)', $baseline, $h1, $baseline)
+h2
+  fluid-size: font-size, $h2-min, $h2-max
+  line-height: $h2-max
+  margin-top: s('calc( (%s - %s) + %s  * 2)', base-line, $h2-max, base-line)
 
-  h2
-    fluid-size: font-size, $h2-min, $h2-max
-    line-height: $h2
-    margin-top: s('calc( (%s - %s) + %s  * 2)', $baseline, $h2, $baseline)
+h3
+  fluid-size: font-size, $h3-min, $h3-max
+  line-height: $h3
+  margin-top: s('calc( (%s - %s) + %s)', base-line, $h3, base-line)
 
-  h3, summary
-    fluid-size: font-size, $h3-min, $h3-max
-    line-height: $h3
-  h3, summary
-    margin-top: s('calc( (%s - %s) + %s)', $baseline, $h3, $baseline)
+h4
+  fluid-size: font-size, $h4-min, $h4-max
+  line-height: $h4
 
-  h4, nav > a, menu > a, label
-    fluid-size: font-size, $h4-min, $h4-max
-    line-height: $h4
-  h4
-    margin-top: s('calc( (%s - %s) + %s  )', $baseline, $h4, $baseline)
+h4
+  margin-top: s('calc( (%s - %s) + %s )', base-line, $h4, base-line)
 
-  h5
-    fluid-size: font-size, $h5-min, $h5-max
-    line-height: $h5
-    margin-top: s('calc( (%s - %s) )', $baseline, $h5, $baseline)
+h5, nav > a, menu > a, label
+  fluid-size: font-size, $h5-min, $h5-max
+  line-height: $h5
+h5
+  margin-top: s('calc( %s - %s )', base-line, $h5)
 
-  h6
-    fluid-size: font-size, $h6-min, $h6-max
-    line-height: $h6
-    margin-top: s('calc( (%s - %s) )', $baseline, $h6, $baseline)
+h6
+  fluid-size: font-size, $h6-min, $h6-max
+  line-height: $h6
+  margin-top: s('calc( %s - %s )', base-line, $h6)

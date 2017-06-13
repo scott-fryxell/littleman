@@ -8,11 +8,11 @@
     <script type="text/javascript" src=application.js></script>
     <title>Little Man</title>
   </head>
-  <svg id='hero'>
-    <use xlink:href="application.svg#logo"/>
-    <use xlink:href="application.svg#logo" opacity="0.15" fill="transparent" transform="scale(0.997, 0.998)"/>
-  </svg>
   <body>
+    <svg id='hero'>
+      <use xlink:href="application.svg#logo"/>
+      <use xlink:href="application.svg#logo" opacity="0.15" fill="transparent" transform="scale(0.997, 0.998)"/>
+    </svg>
     <header>
       <a href="/#hero"><svg id="logo"><use xlink:href="application.svg#logo"/></svg></a>
       <nav>
@@ -77,14 +77,16 @@
           </p>
         </section>
         <footer>
-
+          fo0ter
         </footer>
       </article>
-
     </main>
     <footer>
       <details class="style">
-        <summary contenteditable="false">Style</summary>
+        <summary contenteditable="false">
+          <svg id="style"><use xlink:href="application.svg#leaf"/></svg>
+          <h5>style</h5>
+        </summary>
         <style media="screen">
           * remove {
             outline: 1px solid hsla(203, 58%, 57%, 0.9);
@@ -92,7 +94,10 @@
         </style>
       </details>
       <details class="script">
-        <summary contenteditable="false">Script</summary>
+        <summary contenteditable="false">
+          <svg id="script"><use xlink:href="application.svg#leaf"/></svg>
+          <h5>script</h5>
+        </summary>
         <script type="text/javascript" >
           document.body.addEventListener('keydown', function(keydown) {
             var enter = 13;

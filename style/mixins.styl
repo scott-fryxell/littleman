@@ -1,4 +1,4 @@
-fluid-size($properties, $min-value=1rem, $max-value=1.25rem, $min-vw=20rem, $max-vw=50rem)
+fluid-size($properties, $min-value=min-font, $max-value=max-font, $min-vw=min-screen, $max-vw=max-screen)
   // Renders: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem)
   $min-value-stripped = remove-unit($min-value)
   $max-value-stripped = remove-unit($max-value)
