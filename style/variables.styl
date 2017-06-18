@@ -1,34 +1,13 @@
-// color
+base-line  = 1.333rem // smallest horizontal block of content
 
-black             = hsla(300,  1%, 35%, 0.95)
-black-fill        = hsla(262, 16%, 23%, 0.9)
+min-font   = 1.1rem
+max-font   = 1.2rem
 
-white             = hsla( 57, 41%, 69%, 0.2)
-white-fill        = hsla( 57, 41%, 69%, 0.1)
-white-white       = hsla( 51, 41%, 97%, 0.9)
+min-screen = round(base-line * 22, 3)
+max-screen = round(base-line * 40, 3)
 
-blue              = hsla(203, 58%, 57%, 0.69)
-blue-fill         = hsla(203, 58%, 57%, 0.39)
-
-green             = hsla(136, 47%, 53%, 1)
-green-fill        = hsla(136, 47%, 53%, 0.5)
-
-red               = hsla(353, 83%, 57%, 0.73)
-
-editor-on-color   = red
-published-color   = green
-
-highlight         = -webkit-linear-gradient( top left, transparent, white  )
-reverse-highlight = -webkit-linear-gradient( top left, transparent, black  )
-
-base-line  = 1.33rem // smallest horisontal line
-
-min-font   = 1rem
-max-font   = 1.25rem
-
-min-screen = (base-line * 15)
-max-screen = (base-line * 35)
-
-//modular scale. for small through larger screens
-mod-small = 1.125
-mod-large = 1.25
+// Modular scale. for small and larger screens
+// if you change the scales you'll need to recalculate when the are applied
+// so that the typography scales smoothly http://type-scale.com/
+min-modular = 1.125
+max-modular = 1.333

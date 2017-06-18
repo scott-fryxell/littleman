@@ -1,80 +1,88 @@
-// https://www.smashingmagazine.com/2016/05/fluid-typography/
+// Tie the layout of the page together via a fluid font-size
+// based on accepting the certainty of infinite device sizes over time.
 
-$h1 = 2rem
-$h2 = 1.563rem
-$h3 = 1.25rem
-$h4 = 1rem
-$h5 = .8rem
-$h6 = .64rem
+// Goals
+//   font-size that matches any device width
+//
+//   Line length supports readability
+//
+//   Heading size based on a modular scale
+//
+//   Verticl rhytym with a common baseline
+//
+// implementation from:
+//   https://www.smashingmagazine.com/2016/05/fluid-typography/
 
 
-$h1-max = mod-large ** 4 * 1rem // 2.44140625rem
-$h1-min = mod-small ** 4 * 1rem // 1.601806640625rem
 
-$h2-max = mod-large ** 3 * 1rem // 1.953125rem
-$h2-min = mod-small ** 3 * 1rem // 1.423828125rem
-
-$h3-max = mod-large ** 2 * 1rem // 1.5625rem
-$h3-min = mod-small ** 2 * 1rem // 1.265625rem
-
-$h4-max = mod-large * 1rem // 1.25rem
-$h4-min = mod-small * 1rem // 1.125rem
-
-$h5-min= 1rem
-$h5-max= 1rem
-
-$h6-max= (1rem / mod-large) //.8rem
-$h6-min= (1rem / mod-small) //.8888888888888888rem
-
+// ***************** fluid-typography *****************
 html
   font-family: 'Lato', sans-serif
-  line-height: base-line
-  fluid-size: font-size
+  between: font-size, min-font, max-font, min-screen, max-screen
   font-smoothing: antialiased
   text-rendering: optimizeLegibility
   color:black
   background-color: white-fill
   user-select: none
+p
+  between: max-width, round(base-line * 25, 3), round(base-line * 25, 3)
+
+
+// ***************** modular-scale *****************
+$h1-max = round(max-modular ** 4 * 1rem, 3) // 2.441
+$h1-min = round(min-modular ** 4 * 1rem, 3) // 1.602
+
+$h2-max = round(max-modular ** 3 * 1rem, 3) // 1.953
+$h2-min = round(min-modular ** 3 * 1rem, 3) // 1.424
+
+$h3-max = round(max-modular ** 2 * 1rem, 3) // 1.563
+$h3-min = round(min-modular ** 2 * 1rem, 3) // 1.266
+
+$h4-max = round(max-modular * 1rem, 3) // 1.25
+$h4-min = round(min-modular * 1rem, 3) // 1.125
+
+$h5-min= 1rem
+$h5-max= 1rem
+
+$h6-max= round(1rem / max-modular, 3) //.8
+$h6-min= round(1rem / min-modular, 3) //.888
+
+h1
+  between: font-size, $h1-min, $h1-max
+h2
+  between: font-size, $h2-min, $h2-max
+h3
+  between: font-size, $h3-min, $h3-max
+h4
+  between: font-size, $h4-min, $h4-max
+h5
+  between: font-size, $h5-min, $h5-max
+h6
+  between: font-size, $h6-min, $h6-max
+
+
+// ***************** vertical-rhythm *****************
+html
+  line-height: base-line
 
 p
   line-height: base-line
   margin-bottom: base-line
-  fluid-size: max-width, (base-line * 17), (base-line * 25)
+
 
 h1,h2,h3,h4,h5,h6
   font-weight: 700
   margin-bottom: base-line
+  line-height: 1em
 
+// four baselines high
+h1,h2,h3
+  margin-top: s('calc( (%s - %s) + %s * 2)', base-line, 1em, base-line)
 
-h1
-  fluid-size: font-size, $h1-min, $h1-max
-  line-height: $h1-max
-  margin-top: s('calc( (%s - %s) + %s * 2)', base-line, $h1-max, base-line)
+// three baselines high
+h4,h5,h6
+  margin-top: s('calc( (%s - %s) + %s * 1)', base-line, 1em, base-line)
 
-h2
-  fluid-size: font-size, $h2-min, $h2-max
-  line-height: $h2-max
-  margin-top: s('calc( (%s - %s) + %s  * 2)', base-line, $h2-max, base-line)
-
-h3
-  fluid-size: font-size, $h3-min, $h3-max
-  line-height: $h3
-  margin-top: s('calc( (%s - %s) + %s)', base-line, $h3, base-line)
-
-h4
-  fluid-size: font-size, $h4-min, $h4-max
-  line-height: $h4
-
-h4
-  margin-top: s('calc( (%s - %s) + %s )', base-line, $h4, base-line)
-
-h5, nav > a, menu > a, label
-  fluid-size: font-size, $h5-min, $h5-max
-  line-height: $h5
-h5
-  margin-top: s('calc( %s - %s )', base-line, $h5)
-
+// two baselines high
 h6
-  fluid-size: font-size, $h6-min, $h6-max
-  line-height: $h6
-  margin-top: s('calc( %s - %s )', base-line, $h6)
+  margin-top: s('calc( (%s - %s) )', base-line, 1em)

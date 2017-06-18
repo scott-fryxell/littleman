@@ -1,6 +1,10 @@
-fluid-size($properties, $min-value=min-font, $max-value=max-font, $min-vw=min-screen, $max-vw=max-screen)
+// fluid typography is based on slope intercept form
+// from this article: https://www.smashingmagazine.com/2016/05/fluid-typography/
+// this codepen clears up the slope intercept implementation: http://codepen.io/maranomynet/pen/ozNpXV
 
-  // Renders: calc(1rem + (1.5rem -1rem) * (100vw - 25rem) / (50rem - 25rem)
+between($properties, $min-value=min-font, $max-value=max-font, $min-vw=min-screen, $max-vw=max-screen)
+
+  // Renders: calc(1rem + (1.5rem - 1rem) * (100vw - 25rem) / (50rem - 25rem)
   $min-value-stripped = remove-unit($min-value)
   $max-value-stripped = remove-unit($max-value)
   $min-vw-stripped    = remove-unit($min-vw)
@@ -19,7 +23,3 @@ fluid-size($properties, $min-value=min-font, $max-value=max-font, $min-vw=min-sc
   @media screen and (min-width: $max-vw)
     for $property in $properties
       {$property}: $max-value
-
-font-smoothing()
-  -webkit-font-smoothing: arguments
-  -moz-font-smoothing: arguments
