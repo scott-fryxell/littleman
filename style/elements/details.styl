@@ -5,6 +5,9 @@ details
 
   & > summary
     cursor: pointer
+    font-size: 0.1em
+
+
     &::-webkit-details-marker
       display:none
     & > svg
@@ -16,10 +19,14 @@ details
       transform: rotate(180deg)
 
     & > h5
+      font-size: 0
       margin:0
       transform: rotate(1deg)
-      color:green
-      text-shadow: 0.75px -0.5px 0px green-fill
+      color:red
+      text-shadow: 0.75px -0.5px 0px red
+      text-fill-color: red-fill;
+      &:hover
+        font-size: inherit
 
   &[open]
     & > summary

@@ -1,5 +1,5 @@
 // Tie the layout of the page together via a fluid font-size
-// based on accepting the certainty of infinite device sizes over time.
+// this design invests in the certainty of infinite device sizes over time.
 
 // Goals
 //   font-size that matches any device width
@@ -8,14 +8,13 @@
 //
 //   Heading size based on a modular scale
 //
-//   Verticl rhytym with a common baseline
+//   Vertical rhytym with a common baseline
 //
 // implementation from:
 //   https://www.smashingmagazine.com/2016/05/fluid-typography/
 
 
-
-// ***************** fluid-typography *****************
+// ***************** fluid-typography *****************************************
 html
   font-family: 'Lato', sans-serif
   between: font-size, min-font, max-font, min-screen, max-screen
@@ -28,7 +27,7 @@ p
   between: max-width, round(base-line * 25, 3), round(base-line * 25, 3)
 
 
-// ***************** modular-scale *****************
+// ***************** modular-scale ********************************************
 $h1-max = round(max-modular ** 4 * 1rem, 3) // 2.441
 $h1-min = round(min-modular ** 4 * 1rem, 3) // 1.602
 
@@ -60,29 +59,31 @@ h5
 h6
   between: font-size, $h6-min, $h6-max
 
+// ***************** vertical-rhythm ******************************************
 
-// ***************** vertical-rhythm *****************
+// At least 1 baselines high
 html
   line-height: base-line
 
+// At least 2 baselines high
 p
   line-height: base-line
   margin-bottom: base-line
 
-
 h1,h2,h3,h4,h5,h6
-  font-weight: 700
+  letter-spacing: -.033em
+  font-weight: 500
   margin-bottom: base-line
   line-height: 1em
 
-// four baselines high
+// Four baselines high
 h1,h2,h3
   margin-top: s('calc( (%s - %s) + %s * 2)', base-line, 1em, base-line)
 
-// three baselines high
-h4,h5,h6
+// Three baselines high
+h4,h5
   margin-top: s('calc( (%s - %s) + %s * 1)', base-line, 1em, base-line)
 
-// two baselines high
+// Two baselines high
 h6
   margin-top: s('calc( (%s - %s) )', base-line, 1em)

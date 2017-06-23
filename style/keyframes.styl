@@ -7,14 +7,21 @@
     opacity: 1
     transform: translateY(0)
 
-
-@keyframes slideInDown {
-  from {
+@keyframes slideInDown
+  from
     transform: translate3d(0, -100%, 0);
     visibility: visible;
-  }
 
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes hue
+  0%
+    filter: hue-rotate(0deg)
+
+
+  50%
+    filter: hue-rotate(3deg)
+
+  100%
+    filter: hue-rotate(0deg)
