@@ -8,9 +8,9 @@
     <script type="text/javascript" src=application.js></script>
     <title>Little Man</title>
   </head>
-  <body class='developer'>
+  <body>
     <header>
-      <a href="/#hero"><svg id="logo"><use xlink:href="application.svg#logo"/></svg></a>
+      <a href="/"><svg id="logo"><use xlink:href="application.svg#logo"/></svg></a>
       <nav>
         <a href="/resume">Resume</a>
         <a href="/typography">Typography</a>
@@ -48,6 +48,36 @@
               }
             }
           });
+
+          if(window.DeviceMotionEvent){
+            window.addEventListener("devicemotion", motion, false);
+          }else{
+            console.log("DeviceMotionEvent is not supported");
+          }
+
+          function motion(event){
+            console.log("Accelerometer: "
+              + event.accelerationIncludingGravity.x + ", "
+              + event.accelerationIncludingGravity.y + ", "
+              + event.accelerationIncludingGravity.z
+            );
+          }
+
+          if(window.DeviceOrientationEvent){
+            window.addEventListener("deviceorientation", orientation, false);
+          } else {
+            console.log("DeviceOrientationEvent is not supported");
+          }
+
+          function orientation(event){
+            console.log("Magnetometer: "
+            + event.alpha + ", "
+            + event.beta + ", "
+            + event.gamma
+          );}
+
+
+
         </script>
       </details>
 

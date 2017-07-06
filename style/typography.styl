@@ -73,17 +73,17 @@ p
 h1,h2,h3,h4,h5,h6
   letter-spacing: -.033em
   font-weight: 500
-  margin-bottom: base-line
+  padding-bottom: base-line
   line-height: 1em
 
 // Four baselines high
 h1,h2,h3
-  margin-top: s('calc( (%s - %s) + %s * 2)', base-line, 1em, base-line)
+  padding-top: s('calc( (%s - %s) + %s * 2)', base-line, 1em, base-line)
 
 // Three baselines high
 h4,h5
-  margin-top: s('calc( (%s - %s) + %s * 1)', base-line, 1em, base-line)
+  padding-top: s('calc( (%s - %s) + %s * 1)', base-line, 1em, base-line)
 
 // Two baselines high
 h6
-  margin-top: s('calc( (%s - %s) )', base-line, 1em)
+  padding-top: s('calc( (%s - %s) )', base-line, 1em)
