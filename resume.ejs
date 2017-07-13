@@ -1,16 +1,19 @@
-<section id="resume" itemScope itemType="resume" >
-  <section itemprop="person">
+<section id="scott-fryxell" itemprop="person"  itemtype="http://schema.org/Person">
+  <section>
     <header>
-      <h1 itemprop="full-name">Scott Fryxell</h1>
+      <h1 itemprop="name">Scott Fryxell</h1>
+      <figure>
+        <img itemprop="image" src="" alt="">
+        <span itemprop="telephone">(628) 228-1824</span>
+        <a itemprop="email" href="mailto:sfryxell@me.com">sfryxell@me.com</a>
+      </figure>
     </header>
-    <dl itemprop="address">
-      <dd itemprop="street">637 Haight Street</dd>
-      <dd itemprop="city">San Francisco</dd>
-      <dd itemprop="state">Ca</dd>
-      <dd itemprop="postal-code">94117</dd>
-      <dd itemprop="phone">(628) 228-1824</dd>
-      <a itemprop="email" href="mailto:sfryxell@me.com">sfryxell@me.com</a>
-    </dl>
+    <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <span itemprop="streetAddress">637 Haight Street</span>
+      <span itemprop="addressLocality">San Francisco</span>
+      <span itemprop="addressRegion">Ca</span>
+      <span itemprop="postalCode">94117</span>
+    </p>
   </section>
   <section class="skills">
     <header>
@@ -25,10 +28,11 @@
     <header>
       <h2>Experience</h2>
     </header>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Lead Engineer at Savvy</h3>
-        <time itemprop="length">March 2015 - August 2015</time>
+        <h3><span itemprop="jobTitle">Lead Engineer</span> at
+          <a itemprop="url" href="https://www.savvy.is/"><span itemprop="name">Savvy</span></a></h3>
+        <time itemprop="duration">March 2015 - August 2015</time>
       </header>
       <p itemprop="description">Savvy, a WebRTC based video streaming service
         that connects teachers and learners, received its first round of funding
@@ -45,10 +49,11 @@
         setting the highest possible standards for development.</p>
       <p itemprop="description">Code coverage was at 100% on my last day.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Salesperson at Vacation</h3>
-        <time itemprop="length">April 2014 - present</time>
+        <h3><span itemprop="jobTitle">Salesperson</span> at
+          <a itemprop="url" href="https://www.instagram.com/vacationsf4sale/"><span itemprop="name">Vacation</span></a></h3>
+        <time itemprop="duration">April 2014 - present</time>
       </header>
       <p itemprop="description">I took a break from engineering to reconnect with my community.
         Vacation is a vintage clothing store located in the Tenderloin.
@@ -58,10 +63,12 @@
         Everything about this store makes me happy; I still help with
         shows and occasionally work at the store.</p>
     </article>
-    <article itemprop="job">
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Tout</h3>
-        <time itemprop="length">August 2013 - May 2014 (10 months)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <a href="http://corp.tout.com/"><span itemprop="name">Tout</span></a>
+        </h3>
+        <time itemprop="duration">August 2013 - May 2014 (10 months)</time>
       </header>
       <p itemprop="description">Built the administrative console our partners
         used to access and configure how their embedded content is viewed.
@@ -69,39 +76,43 @@
         video players on partner websites. Analyzed and optimized client-side
         and server-side performance for a very high volume system.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Lead engineer, Founder, CEO at Copper.is</h3>
-        <time itemprop="length">January 2010 - January 2014 </time>
+        <h3><span itemprop="jobTitle">Lead engineer, Founder and CEO</span>, at
+          <span itemprop="name">Copper</span></h3>
+        <time itemprop="duration">January 2010 - January 2014 </time>
       </header>
       <p itemprop="description">Founded, architected, and lead the development
         of an online tipping and appreciation service from concept to fully
         functional product. Hired a team of developers,  brought in investment,
         and worked with the incubator Hattery Labs to develop brand.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Kosmix Inc</h3>
-        <time itemprop="length">June 2008 - January 2009</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">Kosmix Inc</span></h3>
+        <time itemprop="duration">June 2008 - January 2009</time>
       </header>
       <p itemprop="description">Took over an internal AdWords purchasing
         application built in Adobe Flex and Rails. Ported the entire code
         base to Rails and completed the project 9 months ahead of schedule.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Flixster Inc</h3>
-        <time itemprop="length">November 2007 - May 2008 (7 months)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <a href="https://www.flixster.com/"><span itemprop="name">Flixster Inc</span></a></h3>
+        <time itemprop="duration">November 2007 - May 2008 </time>
       </header>
       <p itemprop="description">Implemented new functionality for homepage and
         the site’s most popular feature, “Never Ending Movie Quiz”. Optimized
         site for search engines. Evangelized adoption of more consistent
         javascript framework.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Real Networks</h3>
-        <time itemprop="length">June 2006 - July 2007 (1 year 2 months)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <a href="https://www.realnetworks.com/"><span itemprop="name">Real Networks</span></a></h3>
+        <time itemprop="duration">June 2006 - July 2007</time>
       </header>
       <p itemprop="description">Architected and implemented a publishing rights
         application. Built a search service based on Lucent, which is able to
@@ -111,10 +122,11 @@
         Scriptaculous and some of my own event based insanity to focus the
         middle tier on marshaling data to the client.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at LRN</h3>
-        <time itemprop="length">June 2005 - June 2006</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <a href="http://lrn.com/"><span itemprop="name">LRN</span></a></h3>
+        <time itemprop="duration">June 2005 - June 2006</time>
       </header>
       <p itemprop="description">Developed cross browser backward and forward
         compatible User Agent framework based on Tapestry. Designed a client
@@ -123,10 +135,11 @@
         environment that abstracted developers from the specifics of how the
         user interface functioned.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at NewScale</h3>
-        <time itemprop="length">May 2004 - June 2005 (1 year 2 months)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">NewScale</span></h3>
+        <time itemprop="duration">May 2004 - June 2005</time>
       </header>
       <p itemprop="description">Worked with offshore developers on best practices
         for struts, tiles, and general application development. Implemented a
@@ -142,10 +155,12 @@
       <p itemprop="description">Implemented a templating mechanism to increase
         code reuse and simplified development workflow.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+
       <header>
-        <h3 itemprop='title'>Software Engineer at Covalent Technologies</h3>
-        <time itemprop="length">September 2002 - May 2004</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">Covalent Technologies</span></h3>
+        <time itemprop="duration">September 2002 - May 2004</time>
       </header>
       <p itemprop="description">Managed a team of 5 developers from design through
         release. Architected and drove the implementation of the presentation
@@ -153,10 +168,11 @@
         implemented, and maintained a modular approach for the user interface
         elements, which increased code reuse and reduced time to market</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at SVTechnology</h3>
-        <time itemprop="length">June 2001 - September 2002 (1 year 4 months)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">SVTechnology</span></h3>
+        <time itemprop="duration">June 2001 - September 2002</time>
       </header>
       <p itemprop="description">Facilitated the migration of a knowledge
         management portal application from ColdFusion to J2EE. Mentored 6
@@ -174,10 +190,11 @@
         application stability, and the capacity to quickly add features to the
         application.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at WiseConnect</h3>
-        <time itemprop="length">June 2000 - June 2001</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">WiseConnect</span></h3>
+        <time itemprop="duration">June 2000 - June 2001</time>
       </header>
       <p itemprop="description">Ported the beta of the product from a rigid,
         duplicative, asp.net application architecture to a multi-tiered,
@@ -187,10 +204,11 @@
         security services which allowed other developers to focus on the
         specifics of application development.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Kids Online America</h3>
-        <time itemprop="length">January 2000 - July 2000</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <span itemprop="name">Kids Online America</span></h3>
+        <time itemprop="duration">January 2000 - July 2000</time>
       </header>
       <p itemprop="description">Designed and implemented a personalization and
         security mechanism that created a secure, configurable environment for
@@ -199,10 +217,11 @@
         personalization features that allowed parents to determine the types of
         content delivered to their children.</p>
     </article>
-    <article itemprop='job'>
+    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'>Software Engineer at Orrick, Herrington Sutcliffe LLP</h3>
-        <time itemprop="length">March 1998 - March 2000 (2 years)</time>
+        <h3><span itemprop="jobTitle">Software Engineer</span> at
+          <a href="https://www.orrick.com/"><span itemprop="name">Orrick, Herrington Sutcliffe LLP</span></a></h3>
+        <time itemprop="duration">March 1998 - March 2000</time>
       </header>
       <p itemprop="description">Developed and maintained Visual Basic applications
         for the different departments within the firm. Designed and implemented
@@ -214,10 +233,10 @@
     </article>
   </section>
   <template id="job">
-    <article itemprop='job'>
+    <article itemscope itemtype="http://schema.org/Organization">
       <header>
-        <h3 itemprop='title'></h3>
-        <time itemprop="length"></time>
+        <h3><span itemprop="jobTitle"></span> at <span itemprop="name"></span></h3>
+        <time itemprop="duration"></time>
       </header>
       <p itemprop="description"></p>
     </article>
