@@ -1,7 +1,8 @@
 <section id="scott-fryxell" itemscope itemtype="http://schema.org/Person">
   <style media="screen">
     #scott-fryxell menu > a {
-      display:block
+      display:block;
+      max-width:8rem;
     }
     p[itemprop="address"]{
       margin-bottom:0;
@@ -9,33 +10,40 @@
     section.experience header > h3 {
       margin-bottom:0;
     }
+    #skills ul {
+      margin:0;
+      padding:0;
+      max-width:34rem;
+    }
+    #skills ul li {
+      display: inline-block;
+    }
+    #skills ul li::after {
+      content: ','
+    }
   </style>
   <section>
     <header>
       <h1 itemprop="name">Scott Fryxell</h1>
     </header>
     <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      <span itemprop="streetAddress">637 Haight Street</span><br>
       <span itemprop="addressLocality">San Francisco</span>
-      <span itemprop="addressRegion">Ca</span>,
-      <span itemprop="postalCode">94117</span>
     </p>
     <footer>
       <menu>
-        <a href="tel:+6282281824">(628) 228-1824</a>
-        <a itemprop="email" href="mailto:sfryxell@me.com">sfryxell@me.com</a>
+        <a itemprop="email" href="mailto:sfryxell@gmail.com">sfryxell@gmail.com</a>
       </menu>
     </footer>
   </section>
-  <section class="skills">
+  <section id="skills">
     <header>
       <h2>Skills</h2>
     </header>
-    <p itemprop="skills">
-      JavaScript, CSS, HTML5, Ruby on Rails, Node, Stylus,
-      SASS, jQuery, Software Development, Software Engineering, Web Development,
-      Agile Methodologies, SaaS, Git, Entrepreneurship, Product Development,
-      User Interface, Scalability, Web Applications, Mobile Applications
+    <p itemprop="description">Web application design and development</p>
+    <p itemprop='skills' itemtype="http://schema.org/skills">
+      JavaScript, Coffeescript, Babel, Webpa, Gulp, React, CSS, HTML5,
+      Ruby on Rails, Node, Stylus, Sass,Git, Product Development,
+      User Interface Design, Scalability
     </p>
   </section>
   <section class="experience">
@@ -44,8 +52,8 @@
     </header>
     <article>
       <header >
-        <h3>Contracting</h3>
-        <h6><time itemprop="startdate">April 2014</time> - Present</h6>
+        <h3 itemprop="jobTitle">Software Developer</h3>
+        <h6><time>April 2014</time> - Present</h6>
       </header>
       <p itemprop="description">focused on working on short term, high impact
        web projects. Most recently I served as the release engineer for
@@ -53,17 +61,22 @@
        <p itemprop="description">
          I've spent a lot of this time helping a vintage clothing store called
          <a itemprop="url" href="https://www.instagram.com/vacationsf4sale/">Vacation</a>
-         I help with all aspects of the businee: from selling clothing and
-         supporting bands, to working with the owner to increase profits and
-         bring in a business partner.</p>
+         with all aspects of the busines, from selling clothing and
+         supporting shows that we have in the basement, to working with the owner
+         to increase profits and bring in a business partner. I'm there as a
+         resource for a store that has a mission that I believe in</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Lead Engineer</span> at
-          <a itemprop="url" href="https://www.savvy.is/"><span itemprop="name">Savvy</span></a>
+          <span itemprop="name">Lead Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a itemprop="url" target="_blank" href="https://www.savvy.is/">
+              <span itemprop="name">Savvy</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">March 2015</time> - <time itemprop="enddate">August 2015</time>
         </h6>
       </header>
@@ -82,12 +95,17 @@
         setting the highest possible standards for development.</p>
       <p itemprop="description">Code coverage was at 100% on my last day.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
-        <h3><span itemprop="jobTitle">Software Engineer</span> at
-          <a href="http://corp.tout.com/"><span itemprop="name">Tout</span></a>
+        <h3>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a itemprop="url" target="_blank" href="http://corp.tout.com/">
+              <span itemprop="name">Tout</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">August 2013</time> - <time itemprop="enddate">May 2014</time>
         </h6>
       </header>
@@ -97,13 +115,15 @@
         video players on partner websites. Analyzed and optimized client-side
         and server-side performance for a very high volume system.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Lead engineer, Founder and CEO</span>, at
-          <span itemprop="name">Copper</span>
+          <span itemprop="name">Lead engineer, Founder, and CEO</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">Copper</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">January 2010</time> - <time itemprop="enddate">January 2014</time>
         </h6>
       </header>
@@ -112,13 +132,15 @@
         functional product. Hired a team of developers,  brought in investment,
         and worked with the incubator Hattery Labs to develop brand.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">Kosmix Inc</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">Kosmix Inc</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">June 2008</time> - <time itemprop="enddate">January 2009</time>
         </h6>
       </header>
@@ -126,10 +148,15 @@
         application built in Adobe Flex and Rails. Ported the entire code
         base to Rails and completed the project 9 months ahead of schedule.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
-        <h3><span itemprop="jobTitle">Software Engineer</span> at
-          <a href="https://www.flixster.com/"><span itemprop="name">Flixster Inc</span></a>
+        <h3>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a  itemprop="url" target="_blank" href="https://www.flixster.com/">
+              <span itemprop="name">Flixster Inc </span>
+            </a>
+          </span>
         </h3>
         <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
           <time itemprop="startdate">November 2007</time> - <time itemprop="enddate">May 2008</time>
@@ -140,13 +167,17 @@
         site for search engines. Evangelized adoption of more consistent
         javascript framework.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <a href="https://www.realnetworks.com/"><span itemprop="name">Real Networks</span></a>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a itemprop="url" target="_blank" href="https://www.realnetworks.com/">
+              <span itemprop="name">Real Networks</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">June 2006</time> - <time itemprop="enddate">July 2007</time>
         </h6>
       </header>
@@ -158,13 +189,17 @@
         Scriptaculous and some of my own event based insanity to focus the
         middle tier on marshaling data to the client.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <a href="http://lrn.com/"><span itemprop="name">LRN</span></a>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a itemprop="url" target="_blank" href="http://lrn.com/">
+              <span itemprop="name">LRN</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">June 2005</time> - <time itemprop="enddate">June 2006</time>
         </h6>
       </header>
@@ -175,13 +210,15 @@
         environment that abstracted developers from the specifics of how the
         user interface functioned.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">NewScale</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">NewScale</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">May 2004</time> - <time itemprop="enddate">June 2005</time>
         </h6>
       </header>
@@ -199,13 +236,15 @@
       <p itemprop="description">Implemented a templating mechanism to increase
         code reuse and simplified development workflow.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">Covalent Technologies</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">Covalent Technologies</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">September 2002</time> - <time itemprop="enddate">May 2004</time>
         </h6>
       </header>
@@ -215,13 +254,15 @@
         implemented, and maintained a modular approach for the user interface
         elements, which increased code reuse and reduced time to market</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">SVTechnology</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">SVTechnology</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">June 2001</time> - <time itemprop="enddate">September 2002</time>
         </h6>
       </header>
@@ -241,13 +282,15 @@
         application stability, and the capacity to quickly add features to the
         application.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">WiseConnect</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">WiseConnect</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">June 2000</time> - <time itemprop="enddate">June 2001</time>
         </h6>
       </header>
@@ -259,13 +302,15 @@
         security services which allowed other developers to focus on the
         specifics of application development.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <span itemprop="name">Kids Online America</span>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <span itemprop="name">Kids Online America</span>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">January 2000</time> - <time itemprop="enddate">July 2000</time>
         </h6>
       </header>
@@ -276,13 +321,17 @@
         personalization features that allowed parents to determine the types of
         content delivered to their children.</p>
     </article>
-    <article itemprop='worksfor' itemscope itemtype="http://schema.org/Organization">
+    <article itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle">Software Engineer</span> at
-          <a href="https://www.orrick.com/"><span itemprop="name">Orrick, Herrington Sutcliffe LLP</span></a>
+          <span itemprop="name">Software Engineer</span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place" >
+            <a itemprop="url" target="_blank" href="https://www.orrick.com/">
+              <span itemprop="name">Orrick, Herrington Sutcliffe LLP</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
+        <h6>
           <time itemprop="startdate">March 1998</time> - <time itemprop="enddate">March 2000</time>
         </h6>
       </header>
@@ -296,17 +345,29 @@
     </article>
   </section>
   <template id="job">
-    <article itemscope itemtype="http://schema.org/Organization">
+    <article class="job" itemscope itemtype="http://schema.org/Event/Job">
       <header>
         <h3>
-          <span itemprop="jobTitle"></span> at
-          <span itemprop="name"></span>
+          <span itemprop="name"></span> at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <a itemprop="url" href="http://link-to-company.com">
+              <span itemprop="name">Company Name 2</span>
+            </a>
+          </span>
         </h3>
-        <h6 itemprop="duration" itemscoped itemtype="http://schema.org/Event">
-          <time itemprop="startdate"></time> - <time itemprop="enddate"></time>
+        <h6>
+          <time itemprop="startDate"></time> - <time itemprop="endDate"></time>
         </h6>
       </header>
       <p itemprop="description"></p>
     </article>
   </template>
+
+  <script type="text/javascript">
+
+    // application can update existing Items on page with current template
+  </script>
+
+  <%#  %>
+
 </article>

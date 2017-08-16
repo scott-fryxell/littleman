@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": ""
-
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,12 @@
   },
   "homepage": "https://github.com/scott-fryxell/littleman#readme",
   "devDependencies": {
-    "webpack": "^2.5.1"
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-include": "^2.3.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
   }
 }
