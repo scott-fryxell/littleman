@@ -1,5 +1,14 @@
 <section id="app">
-  <h1>{{ totalCount }} loans expiring soon</h1>
+  <h1>Kiva loans</h1>
+  <h3>{{ totalCount }} expiring soon</h3>
+  <ol id="loans">
+    <loan
+     v-for="loan in values"
+     v-bind:loan="loan"
+     v-bind:key="loan.id">
+   </loan>
+  </ol>
+
 </section>
 <script id="graph-query" type="text/javascript">
   let $query = `{
@@ -28,26 +37,32 @@
   }`;
   let $url ="http://api.kivaws.org/graphql?query=" + encodeURI($query);
 </script>
-
-<script id="initialize" type="text/javascript">
+<script id="get-data" type="text/javascript">
   fetch($url).then(function (response) {
     return response.json()
   }).then(function (results) {
-    console.log(results.data)
     var app = new Vue({
       el: '#app',
       data: results.data.loans,
-
-    })
+    });
   }).catch(function (ex) {
     console.error('failed', ex);
   });
 </script>
-
+<script id="loan-component" type="text/javascript">
+  Vue.component('loan', {
+     props: ['loan'],
+    template: '#loan'
+  })
+</script>
 <template id="loan">
-  <article>
-    <img src="{{loan.image.url}}">
-    <h3><a href="https://www.kiva.org/lend/{{loan.id}}">{{loan.name}}</a></h3>
-    <p>{{description}}</p>
-  </article>
+  <li>
+    <figure>
+      <img :src="loan.image.url">
+      <figcaption >
+        <h4><a :href="'https://www.kiva.org/lend/' + loan.id">{{loan.name}}</a></h4>
+        <p itemprop="description">{{loan.use}}</p>
+      </figcaption>
+    </figure>
+  </li>
 </template>
