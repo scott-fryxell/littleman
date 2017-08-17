@@ -1,0 +1,38 @@
+# original query
+{
+  loans(filters: { expiringSoon: true,
+                         status: fundRaising,
+                        country: ["KE", "US"]
+                 },
+                 sortBy: expiringSoon,
+                 limit: 100) {
+    totalCount
+    values {
+      name
+      loanAmount
+      fundedAmount
+      plannedExpirationDate
+      image {
+        url(presetSize: default)
+      }
+      activity {
+        name
+      }
+      location {
+        country {
+          isoCode
+          name
+        }
+      }
+      lenders(limit: 0) {
+        totalCount
+      }
+      ... on LoanPartner {
+        partnerName
+      }
+      ... on LoanDirect {
+        trusteeName
+      }
+    }
+  }
+}
