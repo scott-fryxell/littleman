@@ -1,17 +1,8 @@
 <section id="app">
   <h1>{{ message }}</h1>
 </section>
-
-<script id="view-set-up" type="text/javascript">
-  var app = new Vue({
-    el: '#app',
-    data: {
-      message: 'Hello Vue!'
-    }
-  })
-</script>
-<script id="query" type="text/javascript">
-  var $query = `{
+<script id="graph-query" type="text/javascript">
+  let $query = `{
     loans(filters: { expiringSoon: true,
                           country: ["US"],
                            status: fundRaising
@@ -35,21 +26,23 @@
       }
     }
   }`;
-  $query = encodeURI($query);
+  let $url ="http://api.kivaws.org/graphql?query=" + encodeURI($query);
 </script>
 
-<script id="ajax" type="text/javascript">
-  let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-  xhr.open('GET', "http://api.kivaws.org/graphql?query=" + $query);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState > 3 && xhr.status === 200) {
-        console.log(xhr.responseText);
-    }
-  };
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.send();
-</script>
+<script id="initialize" type="text/javascript">
+  fetch($url).then(function (response) {
+    return response.json()
+  }).then(function (results) {
+    console.log(results.data)
+    var app = new Vue({
+      el: '#app',
+      data: results.data.loans,
 
+    })
+  }).catch(function (ex) {
+    console.error('failed', ex);
+  });
+</script>
 
 <template id="loan">
   <article>
