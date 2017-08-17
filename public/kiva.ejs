@@ -4,7 +4,6 @@
     <h4>{{ values.length }} expiring in the next 24 hours</h4>
     <h5>${{ to_fund.toLocaleString() }} left to fund these loans</h5>
   </header>
-
   <ol id="loans">
     <loan
      v-for="loan in values"
@@ -12,7 +11,6 @@
      v-bind:key="loan.id">
    </loan>
   </ol>
-
 </section>
 <script id="graph-query" type="text/javascript">
   let $query = `{
@@ -56,13 +54,11 @@
   })
 </script>
 <script id="functions" type="text/javascript">
-
   function app(data){
     filter_data(data)
     set_aggregates(data)
     init_app(data)
   }
-
   function init_app(results){
     filter_data(results)
     var app = new Vue({
@@ -70,7 +66,6 @@
       data: results.data.loans
     });
   }
-
   function filter_data(results){
     let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
     results.data.loans.values = results.data.loans.values.filter( (item) => {
@@ -78,7 +73,6 @@
       return expires < tomorrow
     });
   }
-
   function set_aggregates(results){
     to_fund = 0
     results.data.loans.values.forEach((loan) => {
@@ -100,14 +94,9 @@
     </figure>
   </li>
 </template>
-<style scoped>
-  h4 {
-
-    margin-bottom: 0;
-  }
+<style>
   ol {
     list-style-type: none;
-
   }
   li {
     margin-bottom:1.33rem
@@ -116,10 +105,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
   }
   figure > img {
     margin-right:1.33rem;
     border-radius:.33rem;
+  }
+  figcaption h4 {
+    margin-bottom: 0;
   }
 </style>
