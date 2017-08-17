@@ -1,6 +1,6 @@
 <section id="app">
   <h1>Kiva loans</h1>
-  <h3>{{ totalCount }} expiring soon</h3>
+  <h4>{{ values.length }} expiring in the next 24 hours</h4>
   <ol id="loans">
     <loan
      v-for="loan in values"
@@ -41,9 +41,16 @@
   fetch($url).then(function (response) {
     return response.json()
   }).then(function (results) {
+    let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
+
+    results.data.loans.values = results.data.loans.values.filter( (item) => {
+      let expires = new Date(item.plannedExpirationDate)
+      return expires < tomorrow
+    });
+
     var app = new Vue({
       el: '#app',
-      data: results.data.loans,
+      data: results.data.loans
     });
   }).catch(function (ex) {
     console.error('failed', ex);
@@ -51,7 +58,7 @@
 </script>
 <script id="loan-component" type="text/javascript">
   Vue.component('loan', {
-     props: ['loan'],
+    props: ['loan'],
     template: '#loan'
   })
 </script>
