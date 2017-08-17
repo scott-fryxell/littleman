@@ -41,6 +41,19 @@
   fetch($url).then(function (response) {
     return response.json()
   }).then(function (results) {
+    init_app(results)
+  }).catch(function (ex) {
+    console.error('failed', ex);
+  });
+</script>
+<script id="loan-component" type="text/javascript">
+  Vue.component('loan', {
+    props: ['loan'],
+    template: '#loan'
+  })
+</script>
+<script id="init-app" type="text/javascript">
+  function init_app(results){
     let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
 
     results.data.loans.values = results.data.loans.values.filter( (item) => {
@@ -52,15 +65,9 @@
       el: '#app',
       data: results.data.loans
     });
-  }).catch(function (ex) {
-    console.error('failed', ex);
-  });
-</script>
-<script id="loan-component" type="text/javascript">
-  Vue.component('loan', {
-    props: ['loan'],
-    template: '#loan'
-  })
+
+  }
+
 </script>
 <template id="loan">
   <li>
