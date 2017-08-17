@@ -1,6 +1,10 @@
 <section id="app">
-  <h1>Kiva loans</h1>
-  <h4>{{ values.length }} expiring in the next 24 hours</h4>
+  <header>
+    <h1>Kiva loans</h1>
+    <h4>{{ values.length }} expiring in the next 24 hours</h4>
+    <h5>${{ to_fund.toLocaleString() }} left to fund these loans</h5>
+  </header>
+
   <ol id="loans">
     <loan
      v-for="loan in values"
@@ -13,7 +17,6 @@
 <script id="graph-query" type="text/javascript">
   let $query = `{
     loans(filters: { expiringSoon: true,
-                          country: ["US"],
                            status: fundRaising
                    },
                    sortBy: expiringSoon,
@@ -41,7 +44,7 @@
   fetch($url).then(function (response) {
     return response.json()
   }).then(function (results) {
-    init_app(results)
+    app(results)
   }).catch(function (ex) {
     console.error('failed', ex);
   });
@@ -52,22 +55,38 @@
     template: '#loan'
   })
 </script>
-<script id="init-app" type="text/javascript">
+<script id="functions" type="text/javascript">
+
+  function app(data){
+    filter_data(data)
+    set_aggregates(data)
+    init_app(data)
+  }
+
   function init_app(results){
-    let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
-
-    results.data.loans.values = results.data.loans.values.filter( (item) => {
-      let expires = new Date(item.plannedExpirationDate)
-      return expires < tomorrow
-    });
-
+    filter_data(results)
     var app = new Vue({
       el: '#app',
       data: results.data.loans
     });
-
   }
 
+  function filter_data(results){
+    let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
+    results.data.loans.values = results.data.loans.values.filter( (item) => {
+      let expires = new Date(item.plannedExpirationDate)
+      return expires < tomorrow
+    });
+  }
+
+  function set_aggregates(results){
+    to_fund = 0
+    results.data.loans.values.forEach((loan) => {
+      to_fund += loan.loanAmount - loan.fundedAmount
+    })
+    results.data.loans.to_fund = to_fund
+    return results
+  }
 </script>
 <template id="loan">
   <li>
@@ -75,12 +94,17 @@
       <img :src="loan.image.url">
       <figcaption >
         <h4><a :href="'https://www.kiva.org/lend/' + loan.id">{{loan.name}}</a></h4>
+        <h6>${{ (loan.loanAmount - loan.fundedAmount).toLocaleString() }} left to fundraise</h6>
         <p>{{loan.use}}</p>
       </figcaption>
     </figure>
   </li>
 </template>
 <style scoped>
+  h4 {
+
+    margin-bottom: 0;
+  }
   ol {
     list-style-type: none;
 
