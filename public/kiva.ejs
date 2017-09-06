@@ -25,7 +25,11 @@
         name
         use
         loanAmount
-        fundedAmount
+        loanFundraisingInfo {
+          fundedAmount
+          reservedAmount
+          isExpiringSoon
+        }
         plannedExpirationDate
         image {
           url(presetSize: default)
@@ -76,7 +80,7 @@
   function set_aggregates(results){
     to_fund = 0
     results.data.loans.values.forEach((loan) => {
-      to_fund += loan.loanAmount - loan.fundedAmount
+      to_fund += loan.loanAmount - loan.loanFundraisingInfo.fundedAmount
     })
     results.data.loans.to_fund = to_fund
     return results
@@ -88,7 +92,7 @@
       <img :src="loan.image.url">
       <figcaption >
         <h4><a :href="'https://www.kiva.org/lend/' + loan.id">{{loan.name}}</a></h4>
-        <h6>${{ (loan.loanAmount - loan.fundedAmount).toLocaleString() }} left to fundraise</h6>
+        <h6>${{ (loan.loanAmount - loan.loanFundraisingInfo.fundedAmount).toLocaleString() }} left to fundraise</h6>
         <p>{{loan.use}}</p>
       </figcaption>
     </figure>
