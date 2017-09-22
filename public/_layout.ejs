@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" href="/application.css">
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
     <title>Scott Fryxell</title>
-    <link rel="canonical" href="http://scott-fryxell.github.io/">
+    <link rel="canonical" href="https://scott-fryxell.github.io/">
+    <link rel="stylesheet" href="/application.css">
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
   <body class='developer'>
     <header>
       <a href="/"><svg id="logo"><use xlink:href="application.svg#logo"/></svg></a>
+      <nav>
+        <a href="/style_guide">Style</a>
+        <a href="/profile">Profile</a>
+        <a href="/storage">Storage</a>
+        <a href="/item">Item</a>
+      </nav>
     </header>
     <main>
       <%- yield %>
@@ -49,5 +56,5 @@
       </details>
     </footer>
   </body>
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 </html>

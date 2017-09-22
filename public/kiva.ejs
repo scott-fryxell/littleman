@@ -4,7 +4,10 @@
     <h4>{{ values.length }} expiring in the next 24 hours</h4>
     <h5>${{ to_fund.toLocaleString() }} left to fund these loans</h5>
   </header>
-  <ol id="loans">
+  <aggregate
+    v-bind:aggregate="aggregate">
+  </aggregate>
+  <ol>
     <loan
      v-for="loan in values"
      v-bind:loan="loan"
@@ -12,6 +15,7 @@
    </loan>
   </ol>
 </section>
+
 <script id="graph-query" type="text/javascript">
   let $query = `{
     loans(filters: { expiringSoon: true,
@@ -48,27 +52,25 @@
   }).then(function (results) {
     app(results)
   }).catch(function (ex) {
-    console.error('failed', ex);
+    console.error('failed getting data from kiva', ex);
   });
 </script>
-<script id="loan-component" type="text/javascript">
+<script id="components" type="text/javascript">
+  Vue.component('aggregate', {
+    props: ['aggregate'],
+    template: '#aggregate'
+  })
   Vue.component('loan', {
     props: ['loan'],
     template: '#loan'
   })
+
 </script>
 <script id="functions" type="text/javascript">
   function app(data){
     filter_data(data)
     set_aggregates(data)
     init_app(data)
-  }
-  function init_app(results){
-    filter_data(results)
-    var app = new Vue({
-      el: '#app',
-      data: results.data.loans
-    });
   }
   function filter_data(results){
     let tomorrow = new Date( new Date().getTime() + (24 * 60 * 60 * 1000) )
@@ -85,7 +87,21 @@
     results.data.loans.to_fund = to_fund
     return results
   }
+  function init_app(results){
+    filter_data(results)
+    var app = new Vue({
+      el: '#app',
+      data: results.data.loans
+    });
+  }
 </script>
+<template id="aggregate">
+  <header>
+    <h1>Kiva loans</h1>
+    <h4>{{ aggregate.values.length }} expiring in the next 24 hours</h4>
+    <h5>${{ aggregate.to_fund.toLocaleString() }} left to fund these loans</h5>
+  </header>
+</template>
 <template id="loan">
   <li>
     <figure>
