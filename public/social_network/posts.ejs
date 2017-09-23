@@ -1,0 +1,31 @@
+<section id="posts" itemscoped itemtype="http://schema.org/blog">
+
+</section>
+
+<template id="post-form">
+  <section id="posts" itemscope itemtype="http://schema.org/Blog">
+    <header>
+      <form action="index.html" method="post">
+        <textarea name="name" placeholder="Say it"></textarea>
+        <input type="submit" name="" value="Say it">
+      </form>
+    </header>
+  </section>
+</template>
+
+<template id="post">
+  <article itemscoped itemtype="http://schema.org/SocialMediaPosting" >
+    <header>
+      <time itemprop="created_at" datetime="{{Date.now()}}">Just Now</time>
+    </header>
+    <p itemprop="articleBody">The night that we spent among the trees and our love</p>
+  </article>
+</template>
+
+
+<template id="assertions">
+  As a user
+    when I load the page it shows my posts
+    I can update my profle with a new post
+    when I post some text to my profile it is refelcted on my facebook page
+</template>
