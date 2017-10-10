@@ -1,20 +1,10 @@
-<section id="posts" itemscoped itemtype="http://schema.org/blog">
+<section id="posts" itemscope itemtype="http://schema.org/blog">
 
 </section>
 
-<script id="get-items">
-  document.getItems = function() {
-    console.log("jesus christ lou.");
-    return {};
-  }
-</script>
+<section itemref="posts">
 
-<script id="app">
-  var app = new Vue({
-    el:   '#posts',
-    data: document.getItems()
-  })
-</script>
+</section>
 
 <script id="initialize-firebase">
   // Initialize Firebase
@@ -68,6 +58,51 @@
     .then( text => document.getElementById('posts').outerHTML = text )
     .catch( console.log.bind(console) )
   }
+</script>
+
+<script id="jquery">
+  window.$ = function(selector) {
+      var selectorType = 'querySelectorAll';
+
+      if (selector.indexOf('#') === 0) {
+          selectorType = 'getElementById';
+          selector = selector.substr(1, selector.length);
+      }
+
+      return document[selectorType](selector);
+  };
+
+</script>
+
+<script id="item-class">
+  class Item {
+    static get_items() {
+      console.log('inside get_items', this) // this is mapped to document.
+
+      let items = Array.from(this.querySelectorAll("[itemscope], [itemref]"))
+
+      items.forEach(item => {
+        console.log(item)
+      })
+    }
+    static read(){
+
+    }
+    static save(){
+
+    }
+
+  }
+</script>
+<script id="item-bindings">
+  document.getItems = Item.get_items
+</script>
+
+<script id="app">
+  var app = new Vue({
+    el:   '#posts',
+    data: document.getItems()
+  })
 </script>
 
 <template id="post-form">
