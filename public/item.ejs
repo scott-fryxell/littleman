@@ -1,4 +1,4 @@
-<section>
+<section id="item-test">
   <article id="story" itemscope itemtype="schema.org/person" itemid="http://scott-fryxell.github.io">
     <span itemprop="firstName">Scott</span>
     <link itemprop="url" href="http://scott-fryxell.github.io">
@@ -6,63 +6,14 @@
   <aside itemref="story">
     <span itemprop="lastName">Fryxell</span>
   </aside>
+  <script id="assert">
+    function can(condition, message) {
+      if (!condition) {
+        throw new Error(message || 'Assertion failed');
+      }
+    }
+  </script>
+  <script id='test'>
+    console.assert(document.getItems(), 'getItems() is broken');
+  </script>
 </section>
-<script id="item-class">
-  class Item {
-    static get_items() {
-      let items_as_data = {}
-      let items = Array.from(this.querySelectorAll("[itemscope]"))
-
-      items.forEach(item => {
-        let meta = {
-          type: item.getAttribute('itemtype'),
-          id:   item.getAttribute('itemid'),
-          element_id: item.getAttribute('id')
-        }
-        let properties = Item.get_item_properties(item)
-        items_as_data[meta.id] = { ...meta, ...properties }
-      })
-      return items_as_data
-    }
-
-    static get_item_properties(item) {
-      let props = {}
-      let properties = Array.from( item.querySelectorAll('[itemprop]') )
-
-      properties.forEach (prop => {
-        let name = prop.getAttribute('itemprop')
-        let value = Item.property_value(prop)
-        props[name] = value
-      })
-      return props
-    }
-    static property_value(element) {
-      if ( element.dataset.value) {
-        return element.dataset.value
-      }
-      switch (element.tagName.toLowerCase()) {
-        case 'link' || 'a': return element.getAttribute('href')
-        case 'img' || 'object' || 'embed': return element.getAttribute('src')
-        case 'meta': return element.getAttribute('content')
-        case 'time': return element.getAttribute('datetime')
-        case 'input' || 'textarea' || 'select': return element.value
-        default: return element.textContent.trim()
-      }
-    }
-  }
-</script>
-<script id="item-bindings">
-  document.getItems = Item.get_items
-</script>
-
-
-<script id="assert">
-  function can(condition, message) {
-    if (!condition) {
-      throw new Error(message || 'Assertion failed');
-    }
-  }
-</script>
-<script id='test'>
-  can( document.getItems().length === 1, 'getItems is broken ')
-</script>

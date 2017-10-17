@@ -1,133 +1,35 @@
 <section id="posts" itemscope itemtype="http://schema.org/blog">
-
-</section>
-
-<section itemref="posts">
-
-</section>
-
-<script id="initialize-firebase">
-  // Initialize Firebase
-  let config = {
-    apiKey: "AIzaSyDpRbQe67nfP2HTxkThxhY2Fk-ru0x2aus",
-    authDomain: "littleman-8f289.firebaseapp.com",
-    databaseURL: "https://littleman-8f289.firebaseio.com",
-    storageBucket: "littleman-8f289.appspot.com",
-    messagingSenderId: "363642054727"
-  }
-  firebase.initializeApp(config)
-  const storage_ref = firebase.storage().ref()
-  const auth = firebase.auth()
-</script>
-
-<script id="initialize-user">
-  auth.onAuthStateChanged( user => {
-    if (user) {
-      // User is signed in.
-      const url = `users/${auth.currentUser.uid}/posts.html`
-      load_posts(url)
-      // save_posts(url)
-    } else {
-      // User is signed out.
-      auth.signInAnonymously()
-    }
-  })
-</script>
-
-<script id="save-posts">
-  function save_posts(url) {
-    const file_parts  = [document.getElementById('posts').outerHTML]
-    const user_posts  = new File(file_parts, 'posts.html')
-    const metadata    = {'contentType': 'text/html'}
-
-    storage_ref.child( url ).put( user_posts, metadata ).then( snapshot => {
-      console.log('Uploaded', snapshot.totalBytes, 'bytes.')
-      console.log(snapshot.metadata)
-      console.log(snapshot.fullPath)
-      console.log('File available at', snapshot.downloadURL)
-    }).catch(console.log.bind(console))
-
-  }
-</script>
-
-<script id="load-posts">
-  function load_posts(url) {
-    storage_ref.child(url).getDownloadURL()
-    .then( url => fetch(url))
-    .then( response => response.text() )
-    .then( text => document.getElementById('posts').outerHTML = text )
-    .catch( console.log.bind(console) )
-  }
-</script>
-
-<script id="jquery">
-  window.$ = function(selector) {
-      var selectorType = 'querySelectorAll';
-
-      if (selector.indexOf('#') === 0) {
-          selectorType = 'getElementById';
-          selector = selector.substr(1, selector.length);
-      }
-
-      return document[selectorType](selector);
-  };
-
-</script>
-
-<script id="item-class">
-  class Item {
-    static get_items() {
-      console.log('inside get_items', this) // this is mapped to document.
-
-      let items = Array.from(this.querySelectorAll("[itemscope], [itemref]"))
-
-      items.forEach(item => {
-        console.log(item)
-      })
-    }
-    static read(){
-
-    }
-    static save(){
-
-    }
-
-  }
-</script>
-<script id="item-bindings">
-  document.getItems = Item.get_items
-</script>
-
-<script id="app">
-  var app = new Vue({
-    el:   '#posts',
-    data: document.getItems()
-  })
-</script>
-
-<template id="post-form">
-  <section id="posts" itemscope itemtype="http://schema.org/Blog">
-    <header>
-      <form action="index.html" method="post">
-        <textarea name="name" placeholder="Say it"></textarea>
-        <input type="submit" name="" value="Say it">
-      </form>
-    </header>
-  </section>
+  <header>
+    <post-form>
+  </header>
+ </section>
+<template id="form">
+  <form>
+    <textarea name="name" placeholder="Wat?" autofocus></textarea>
+    <button>wat</button>
+  </form>
 </template>
 
 <template id="post">
-  <article itemscoped itemtype="http://schema.org/SocialMediaPosting" >
+  <article itemscope itemid="{{me.id}}/posts/{{guid}}" itemtype="http://schema.org/SocialMediaPosting" >
     <header>
-      <time itemprop="created_at" datetime="{{Date.now()}}">Just Now</time>
+      <time itemprop="created_at" datetime="{{post.created_at}}">Just Now</time>
     </header>
-    <p itemprop="articleBody">The night that we spent among the trees and our love</p>
+    <p itemprop="articleBody">{{post.body}}</p>
   </article>
 </template>
 
 <template id="assertions">
   As a user
     I can update my profle with a new post
-    when I post some text to my profile it is refelcted on my facebook page
-    when the page first loads it should have a working graphic
 </template>
+
+<script id="app">
+  Vue.component('post-form', {
+    template: '#form'
+  })
+  var app = new Vue({
+    el:   'section#posts',
+    data: document.getItems("http://schema.org/SocialMediaPosting")
+  })
+</script>

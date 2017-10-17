@@ -1,72 +1,89 @@
-<details>
-  <summary>Firebase init</summary>
-  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-storage.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDpRbQe67nfP2HTxkThxhY2Fk-ru0x2aus",
-      authDomain: "littleman-8f289.firebaseapp.com",
-      databaseURL: "https://littleman-8f289.firebaseio.com",
-      projectId: "littleman-8f289",
-      storageBucket: "littleman-8f289.appspot.com",
-      messagingSenderId: "363642054727"
-    };
-    firebase.initializeApp(config);
-  </script>
-</details>
+<section id="posts" itemscope itemtype="http://schema.org/blog">
+   <aside>
+    <h1>loading...</h1>
+  </aside>
+  <header>
+    <posts-form>
+  </header>
+  <posts-lists>
+ </section>
 
-<details>
-  <summary>Storage full example</summary>
+<script id="initialize-firebase">
+  // Initialize Firebase
+  let config = {
+    apiKey: "AIzaSyDpRbQe67nfP2HTxkThxhY2Fk-ru0x2aus",
+    authDomain: "littleman-8f289.firebaseapp.com",
+    databaseURL: "https://littleman-8f289.firebaseio.com",
+    storageBucket: "littleman-8f289.appspot.com",
+    messagingSenderId: "363642054727"
+  }
+  firebase.initializeApp(config)
+  const storage_ref = firebase.storage().ref()
+  const auth = firebase.auth()
+</script>
 
-  <script type="text/javascript">
-    // File or Blob named mountains.jpg
-    var aFileParts = ['<a id="a"><b id="b">hey!</b></a>']; // an array consisting of a single DOMString
-    // var html_doc = new Blob(aFileParts, {type : 'text/html', name:'item.html'}); // the blob
-    var file = new File(aFileParts, 'item.html')
+<script id="initialize-user">
+  auth.onAuthStateChanged( user => {
+    if (user) {
+      // User is signed in.
+      const url = `users/${auth.currentUser.uid}/posts.html`
+      // load_posts(url)
+      // save_posts(url)
+    } else {
+      // User is signed out.
+      auth.signInAnonymously()
+    }
+  })
+</script>
 
-    // Create the file metadata
-    var metadata = {
-      contentType: 'text/html'
-    };
+<script id="save-posts">
+  function save_posts(url) {
+    const file_parts  = [document.getElementById('posts').outerHTML]
+    const user_posts  = new File(file_parts, 'posts.html')
+    const metadata    = {'contentType': 'text/html'}
+    storage_ref.child( url ).put( user_posts, metadata ).then( snapshot => {
+      console.log('Uploaded', snapshot.totalBytes, 'bytes.')
+      console.log(snapshot.metadata)
+      console.log(snapshot.fullPath)
+      console.log('File available at', snapshot.downloadURL)
+    }).catch(console.log.bind(console))
+  }
+</script>
 
-    // Upload file and metadata to the object 'test/item.html'
-    var uploadTask = storageRef.child('test').child(file.name).put(file, metadata);
+<script id="load-posts">
+  function load_posts(url) {
+    storage_ref.child(url).getDownloadURL()
+    .then( url => fetch(url))
+    .then( response => response.text() )
+    .then( text => document.getElementById('posts').outerHTML = text )
+    .catch( console.log.bind(console) )
+  }
+</script>
 
-    // Listen for state changes, errors, and completion of the upload.
-    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-      function(snapshot) {
-        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-          case firebase.storage.TaskState.PAUSED: // or 'paused'
-            console.log('Upload is paused');
-            break;
-          case firebase.storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running');
-            break;
-        }
-      }, function(error) {
+<script id="app">
+  var app = new Vue({
+    el:   'section#posts',
+    data: document.getItems("http://schema.org/SocialMediaPosting")
+  })
+</script>
 
-      // A full list of error codes is available at
-      // https://firebase.google.com/docs/storage/web/handle-errors
-      switch (error.code) {
-        case 'storage/unauthorized':
-          // User doesn't have permission to access the object
-          break;
+<template id="post-form">
+  <form action="index.html" method="post">
+    <textarea name="name" placeholder="Wat?"></textarea>
+    <input type="submit">
+  </form>
+</template>
 
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
-        case 'storage/unknown':
-          // Unknown error occurred, inspect error.serverResponse
-          break;
-      }
-      }, function() {
-        // Upload completed successfully, now we can get the download URL
-        var downloadURL = uploadTask.snapshot.downloadURL;
-        console.log(downloadURL);
-    });
-  </script>
-</details>
+<template id="post">
+  <article itemscope itemid="{{me.id}}/posts/{{guid}}" itemtype="http://schema.org/SocialMediaPosting" >
+    <header>
+      <time itemprop="created_at" datetime="{{post.created_at}}">Just Now</time>
+    </header>
+    <p itemprop="articleBody">{{post.body}}</p>
+  </article>
+</template>
+
+<template id="assertions">
+  As a user
+    I can update my profle with a new post
+</template>
