@@ -1,17 +1,15 @@
 <section id="posts" itemscope itemtype="http://schema.org/blog">
   <header>
-    <textarea tabindex="1" placeholder="Wat?" v-model="newPost" v-on:focusout="addPost"></textarea>
+    <textarea tabindex="1" placeholder="Wat?" v-model="new_post" v-on:focusout="addPost"></textarea>
   </header>
- </section>
 
-<template id="post">
-  <article itemscope itemid="{{me.id}}/posts/{{guid}}" itemtype="http://schema.org/SocialMediaPosting" >
-    <header>
-      <time itemprop="created_at" datetime="{{post.created_at}}">Just Now</time>
-    </header>
+  <article  v-for="post in posts" :key="post.id" itemscope itemtype="http://schema.org/SocialMediaPosting" >
     <p itemprop="articleBody">{{post.body}}</p>
+    <footer>
+      <time itemprop="created_at" :datetime="post.created_at">Just Now</time>
+    </footer>
   </article>
-</template>
+ </section>
 
 <template id="assertions">
   As a user I can update my profle with a new post
@@ -22,13 +20,22 @@
     el:   'section#posts',
     // data: document.getItems("http://schema.org/SocialMediaPosting")
     data: {
-
-      newPost: ''
+      posts: [],
+      new_post: ''
     },
     methods: {
       addPost: function() {
+        var value = this.new_post && this.new_post.trim()
+        if (!value) {
+          return
+        }
+        this.posts.push({
+          id: 1,
+          body: value,
+          created_at: Date()
+        })
         console.log('adding a post time');
-        this.newPost = ''
+        this.new_post = ''
       }
     }
   })
