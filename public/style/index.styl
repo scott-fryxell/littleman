@@ -14,45 +14,53 @@ main
 section#posts
   transition-property: all
   width: 100%
-  header
+  flex-direction: column-reverse
+  justify-content: flex-end
+  align-content: flex-end
+  & > header
     display: flex
     flex-direction:column
     align-items: center
 
-  textarea
-    height: base-line * 2
-    line-height: base-line * 2
-    vertical-align:middle
-    padding:0
+    & > textarea
+        height: base-line * 2
+        line-height: base-line * 2
+        vertical-align:middle
+        padding:0
 
-    border:0.125em solid blue
-    between: font-size, min-font, max-font, min-screen, max-screen
-    background-color: transparent
-    color:black
+        border:0.125em solid blue
+        between: font-size, min-font, max-font, min-screen, max-screen
+        background-color: transparent
+        color:black
 
-    transition-property: all
-    outline: none
-    overflow: auto
-    box-shadow: none
-    resize: none
-    -webkit-appearance: none
+        transition-property: all
+        outline: none
+        overflow: auto
+        box-shadow: none
+        resize: none
+        -webkit-appearance: none
 
-    &:focus
-      transition-duration: .4s
-      transition-property: line-height
-      width: 100%
-      line-height: base-line
-      user-select: text
-      padding:0
-      border-width: 0
-      height: 100vh
-      &::placeholder
-        text-align: left
-        color: blue
+        &:focus
+          transition-duration: .4s
+          transition-property: line-height
+          width: 100%
+          line-height: base-line
+          user-select: text
+          padding:0
+          border-width: 0
+          height: 100vh
+          &::placeholder
+            text-align: left
+            color: blue
 
-    &::placeholder
-      padding:0
-      vertical-align: middle
-      between: font-size, min-font, max-font, min-screen, max-screen
-      text-align: center
-      color: green
+        &::placeholder
+          padding:0
+          vertical-align: middle
+          between: font-size, min-font, max-font, min-screen, max-screen
+          text-align: center
+          color: green
+
+  & > article
+    margin-top: base-line
+    & > p
+      margin-bottom:0
