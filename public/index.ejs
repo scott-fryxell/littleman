@@ -1,6 +1,6 @@
 <section id="posts" itemscope itemtype="http://schema.org/blog">
   <header>
-    <textarea placeholder="Wat?" v-model="newPost" v-on:focusout="addPost"></textarea>
+    <textarea tabindex="1" placeholder="Wat?" v-model="newPost" v-on:focusout="addPost"></textarea>
   </header>
  </section>
 
@@ -22,7 +22,7 @@
     el:   'section#posts',
     // data: document.getItems("http://schema.org/SocialMediaPosting")
     data: {
-      
+
       newPost: ''
     },
     methods: {
