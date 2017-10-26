@@ -11,6 +11,16 @@ section#posts
     align-items: center
 
   textarea
+    height: base-line * 2
+    line-height: base-line * 2
+    vertical-align:middle
+    padding:0
+
+    border:0.125em solid blue
+    between: font-size, min-font, max-font, min-screen, max-screen
+    background-color: transparent
+    color:black
+
     transition-property: all
     outline: none
     overflow: auto
@@ -18,28 +28,24 @@ section#posts
     resize: none
     -webkit-appearance: none
 
-    height: base-line * 2
-    line-height: base-line * 2
-    between: font-size, min-font, max-font, min-screen, max-screen
-    padding:0
-
-    background-color: transparent
-    color:black
-    border:0.1em solid red
-
     &:focus
+      transition-duration: .4s
+      transition-property: line-height
       width: 100%
       line-height: base-line
-      border-color: transparent
       user-select: text
       padding:0
+      border-width: 0
       height: 100vh
+      &:before
+        content: " "
       &::placeholder
         text-align: left
+        color: blue
 
     &::placeholder
       padding:0
       vertical-align: middle
       between: font-size, min-font, max-font, min-screen, max-screen
       text-align: center
-      color: blue
+      color: green
