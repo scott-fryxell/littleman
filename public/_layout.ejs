@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="canonical"  href="https://scott-fryxell.github.io/">
 
-    <script src="/item.js"></script>
+    <%# <script src="/item.js"></script>%>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
   </head>
   <body class='developer'>
     <header>
       <a href="/"><svg id="logo"><use xlink:href="/application.svg#logo"/></svg></a>
+      <nav>
+        <a href="/resume">CV</a>
+      </nav>
     </header>
     <main>
       <%- yield %>
@@ -34,7 +37,7 @@
         </style>
       </details>
       <details class="script">
-        <summary contenteditable="false">
+        <summary>
           <svg id="script"><use xlink:href="/application.svg#leaf"/></svg>
           <h5>Script</h5>
         </summary>

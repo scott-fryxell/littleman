@@ -1,23 +1,43 @@
-section#posts
+main
   width: 100%
-
-  form
+section#posts
+  transition-property: all
+  width: 100%
+  header
     display: flex
     flex-direction:column
-    align-items: stretch
+    align-items: center
 
   textarea
-    width: 100%
-    padding:base-line
-    background-color: white-fill
+    transition-property: all
+    outline: none
+    overflow: auto
+    box-shadow: none
+    resize: none
+    -webkit-appearance: none
+
+    height: base-line * 2
+    line-height: base-line * 2
+    between: font-size, min-font, max-font, min-screen, max-screen
+    padding:0
+
+    background-color: transparent
     color:black
-    border:0.1rem solid red
+    border:0.1em solid red
+
+    &:focus
+      width: 100%
+      line-height: base-line
+      border-color: transparent
+      user-select: text
+      padding:0
+      height: 100vh
+      &::placeholder
+        text-align: left
 
     &::placeholder
+      padding:0
+      vertical-align: middle
+      between: font-size, min-font, max-font, min-screen, max-screen
+      text-align: center
       color: blue
-
-  button
-    color:green
-    background-color: white-fill
-    border:0.1rem solid green
-    border-radius: .2rem

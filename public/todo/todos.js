@@ -1,3 +1,4 @@
+// https://vuejs.org/v2/examples/todomvc.html
 // Full spec-compliant TodoMVC with localStorage persistence
 // and hash-based routing in ~120 effective lines of JavaScript.
 
