@@ -20,7 +20,7 @@ class Item {
 
       let properties = Item.get_item_properties(item)
       properties['type'] = item.getAttribute('itemtype')
-
+      items_as_data.push(properties)
     })
     return items_as_data
   }

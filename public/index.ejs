@@ -2,18 +2,16 @@
 <script type="text/javascript" src="/scripts/timeago.js"></script>
 <script type="text/javascript" src="/scripts/item.js"></script>
 
-<section id="posts" itemscope itemtype="http://schema.org/blog">
+<section id="posts">
   <header>
     <textarea tabindex="1" placeholder="Wat?" v-model="new_post" v-on:focusout="addPost"></textarea>
   </header>
-
-  <article  v-for="post in posts" itemscope itemtype="http://schema.org/SocialMediaPosting">
-    <header>
-      <time itemprop="created_at" :datetime="post.created_at">Just now</time>
-    </header>
-    <p itemprop="articleBody">{{post.articleBody}}</p>
-
-  </article>
+  <section itemscope itemtype="http://schema.org/blog">
+    <article  v-for="post in posts" itemscope itemtype="http://schema.org/SocialMediaPosting">
+      <header><time itemprop="created_at" :datetime="post.created_at">Just now</time></header>
+      <p itemprop="articleBody">{{post.articleBody}}</p>
+    </article>
+  </section>
  </section>
 
 <template id="assertions">
@@ -25,15 +23,14 @@
 <script id="app">
   var storage = {
     key: "some-posts",
-    save: function(){
-      var posts = document.querySelector('#posts').outerHTML
+    save() {
+      var posts = document.querySelector('[itemtype="http://schema.org/blog"]').innerHTML
       localStorage.setItem(storage.key, posts)
     },
-    load: function(){
+    load() {
       let posts_string =  localStorage.getItem(this.key)
       let posts = document.createRange().createContextualFragment(posts_string)
       posts.getItems = Item.get_items
-      // console.log(posts.getItems('http://schema.org/SocialMediaPosting'))
       return posts.getItems('http://schema.org/SocialMediaPosting')
     }
   }
@@ -44,13 +41,10 @@
       new_post: ''
     },
     methods: {
-      addPost: function() {
-        var value = this.new_post && this.new_post.trim()
-        if (!value) {
-          return
-        }
+      addPost() {
+        let value = this.new_post && this.new_post.trim()
+        if (!value) { return }
         this.posts.push({
-          id: 1,
           articleBody: value,
           created_at: Date()
         })
@@ -58,7 +52,7 @@
       }
     },
     watch: {
-      posts: function() { storage.save() }
+      posts() { storage.save() }
     }
   })
 </script>
