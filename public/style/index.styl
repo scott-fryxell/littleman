@@ -19,11 +19,12 @@ section#posts > header
   align-items: center
 
   & > textarea
+
     width: base-line * 8
     height: base-line * 2
-    line-height: base-line * 2
+    line-height: 1
     vertical-align:middle
-    padding:0
+    padding: (base-line / 2)
 
     border:0.125em solid blue
     between: font-size, min-font, max-font, min-screen, max-screen
@@ -31,21 +32,24 @@ section#posts > header
     color:black
 
     transition-property: all
+
     outline: none
     overflow: auto
     box-shadow: none
     resize: none
     -webkit-appearance: none
 
+
     &:focus
       transition-duration: .4s
-      transition-property: line-height
+      transition-property: line-height, padding
       width: 100%
       line-height: base-line
       user-select: text
       padding:0
       border-width: 0
       height: 100vh
+
       &::placeholder
         text-align: left
         color: blue
@@ -60,4 +64,3 @@ section#posts > header
 section[itemtype="http://schema.org/blog"]
   display: flex
   flex-direction: column-reverse
- 
