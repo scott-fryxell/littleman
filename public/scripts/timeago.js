@@ -1,34 +1,75 @@
-// embed <script src="https://gist.github.com/nobitagit/74c507a96a73cbcace6c824bc9c2fecf.js"></script>
-// Epochs
-const epochs = [
-    ['year', 31536000],
-    ['month', 2592000],
-    ['day', 86400],
-    ['hour', 3600],
-    ['minute', 60],
-    ['second', 1]
-];
+// https://coderwall.com/p/uub3pw/javascript-timeago-func-e-g-8-hours-ago
+(function timeAgo() {
 
-// Get duration
-const getDuration = (timeAgoInSeconds) => {
-    for (let [name, seconds] of epochs) {
-        const interval = Math.floor(timeAgoInSeconds / seconds);
+    var templates = {
+        prefix: "",
+        suffix: " ago",
+        seconds: "seconds",
+        minute: "a minute",
+        minutes: "%d minutes",
+        hour: "about an hour",
+        hours: "about %d hours",
+        day: "a day",
+        days: "%d days",
+        month: "about a month",
+        months: "%d months",
+        year: "about a year",
+        years: "%d years"
+    };
+    var template = function(t, n) {
+        return templates[t] && templates[t].replace(/%d/i, Math.abs(Math.round(n)));
+    };
 
-        if (interval >= 1) {
-            return {
-                interval: interval,
-                epoch: name
-            };
-        }
-    }
-};
+    var timer = function(time) {
+        // console.log(time);
+        if (!time)
+            return;
+        time = time.replace(/\.\d+/, ""); // remove milliseconds
+        time = time.replace(/-/, "/").replace(/-/, "/");
+        time = time.replace(/T/, " ").replace(/Z/, " UTC");
+        time = time.replace(/([\+\-]\d\d)\:?(\d\d)/, " $1$2"); // -04:00 -> -0400
+        time = new Date(time * 1000 || time);
 
+        var now = new Date();
+        var seconds = ((now.getTime() - time) * .001) >> 0;
+        var minutes = seconds / 60;
+        var hours = minutes / 60;
+        var days = hours / 24;
+        var years = days / 365;
 
-// Calculate
-const timeAgo = (date) => {
-    const timeAgoInSeconds = Math.floor((new Date() - new Date(date)) / 1000);
-    const {interval, epoch} = getDuration(timeAgoInSeconds);
-    const suffix = interval === 1 ? '' : 's';
+        return templates.prefix + (
+                seconds < 45 && template('seconds', seconds) ||
+                seconds < 90 && template('minute', 1) ||
+                minutes < 45 && template('minutes', minutes) ||
+                minutes < 90 && template('hour', 1) ||
+                hours < 24 && template('hours', hours) ||
+                hours < 42 && template('day', 1) ||
+                days < 30 && template('days', days) ||
+                days < 45 && template('month', 1) ||
+                days < 365 && template('months', days / 30) ||
+                years < 1.5 && template('year', 1) ||
+                template('years', years)
+                ) + templates.suffix;
+    };
 
-    return `${interval} ${epoch}${suffix} ago`;
-};
+    // var elements = document.querySelectorAll('time')
+    // for (var i in elements) {
+    //     var $this = elements[i];
+    //     if (typeof $this === 'object') {
+    //         $this.innerHTML = timer($this.getAttribute('datetime'));
+    //     }
+    // }
+
+    let times = Array.from( document.querySelectorAll('time') )
+
+    times.forEach (time => {
+      when = time.getAttribute('datetime')
+      // console.log(time, timer(when),  when)
+      time.textContent = timer(time.getAttribute('datetime'))
+    })
+
+    // update time every minute
+    // setTimeout(timeAgo, 60000);
+    setTimeout(timeAgo, 1000);
+
+})();

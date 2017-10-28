@@ -8,16 +8,15 @@
   </header>
   <section itemscope itemtype="http://schema.org/blog">
     <article  v-for="post in posts" itemscope itemtype="http://schema.org/SocialMediaPosting">
-      <header><time itemprop="created_at" :datetime="post.created_at">Just now</time></header>
+      <header><time itemprop="created_at" :datetime="post.created_at"></time></header>
       <p itemprop="articleBody">{{post.articleBody}}</p>
     </article>
   </section>
  </section>
 
 <template id="assertions">
-  posts will be persisted to local storage
-  posts will communicate when they are created_at
   the page wil load from cache first
+  the page will persist to firebase 
 </template>
 
 <script id="app">
@@ -34,6 +33,7 @@
       return posts.getItems('http://schema.org/SocialMediaPosting')
     }
   }
+
   var app = new Vue({
     el:   'section#posts',
     data: {
@@ -46,13 +46,19 @@
         if (!value) { return }
         this.posts.push({
           articleBody: value,
-          created_at: Date()
+          created_at: new Date().toISOString()
         })
         this.new_post = ''
+        storage.save()
       }
     },
+
     watch: {
-      posts() { storage.save() }
+      posts() {
+        Vue.nextTick( () => {
+          storage.save()
+        })
+      }
     }
   })
 </script>
