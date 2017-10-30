@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 1.0.4
+
+resume
+application.css
+application.svg
+scripts/Item.js
+scripts/vue.js
+scripts/timeago.js
+
+NETWORK:
+*
