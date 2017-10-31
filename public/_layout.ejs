@@ -14,11 +14,12 @@
     <script src="/scripts/Item.js"></script>
     <script src="/scripts/timeago.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-
   </head>
   <body class='developer'>
     <header>
-      <a tabindex="-1" href="/"><svg id="logo"><use xlink:href="/application.svg#logo"/></svg></a>
+      <a tabindex="-1" href="/">
+        <svg id="logo"><use xlink:href="/application.svg#logo"/></svg>
+      </a>
       <nav>
         <a tabindex="-1" href="/resume">CV</a>
         <a tabindex="-1" href="https://cash.me/$ScottFryxell" target="_blank">$</a>
@@ -27,38 +28,5 @@
     <main>
       <%- yield %>
     </main>
-    <footer>
-      <details class="style">
-        <summary>
-          <svg id="style"><use xlink:href="/application.svg#leaf"/></svg>
-          <h5>Style</h5>
-        </summary>
-        <style media="screen">
-          * remove {
-            outline: 1px solid hsla(203, 58%, 57%, 0.9);
-          }
-        </style>
-      </details>
-      <details class="script">
-        <summary>
-          <svg id="script"><use xlink:href="/application.svg#leaf"/></svg>
-          <h5>Script</h5>
-        </summary>
-        <script type="text/javascript" >
-          document.body.addEventListener('keydown', function(keydown) {
-            var enter = 13;
-            if(keydown.keyCode == enter && keydown.metaKey) {
-              var content = document.querySelector("body")
-              if( content.isContentEditable ) {
-                content.removeAttribute("contenteditable");
-              } else {
-                content.setAttribute("contenteditable",  true);
-              }
-            }
-          });
-        </script>
-      </details>
-    </footer>
   </body>
-
 </html>
