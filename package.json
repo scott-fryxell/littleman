@@ -4,8 +4,9 @@
   "description": "CMS ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
+    "dev": "harp server ./public",
+    "build": "harp compile ./public --output ../../scott-fryxell.github.io",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
     "gulp-include": "^2.3.1",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8"
-  }
+    "gulp-util": "^3.0.8",
+    "harp": "^0.25.0"
+  },
+  "keywords": []
 }
