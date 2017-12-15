@@ -1,4 +1,4 @@
-# article title as URL goes here
+# Section 25
 
 Ride’s rise to prominence can only be characterized in one way; quick. The band started in 1988 straight out of school and almost immediately discovered by Alan Mcgee of creation records. They rapidly overpassed even their own conceptions of success. By 1990 all three of their eps had hit the Uk top 75. At the time lead singer Mark Gardner was only 19. Gardner now 47 lives in his home town of oxford splitting his time between producing, being a father and playing with recently reunited Ride. We talked about suburban mundanity and his abrupt fame.
 
