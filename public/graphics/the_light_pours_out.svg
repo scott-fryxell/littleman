@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 436 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>The Light Pours Out</title>
+    <desc>The logo for The Light Pours Out</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="the-light-pours-out" transform="translate(0.000000, 1.000000)">
+            <ellipse id="out" stroke="#EB57BF" fill="#EB57BF" transform="translate(375.033311, 188.679145) rotate(48.000000) translate(-375.033311, -188.679145) " cx="375.033311" cy="188.679145" rx="43" ry="54"></ellipse>
+            <g id="pours" transform="translate(343.500000, 112.000000) rotate(1.000000) translate(-343.500000, -112.000000) translate(279.000000, 10.000000)" stroke="#2582CD">
+                <path d="M46.6748073,183.688315 L49.5851691,9.31201491 C49.5851691,9.31201491 49.360316,-50.983412 43.1496352,74.7326798 C36.9389543,200.448772 38.8685892,209.014758 38.8685892,209.014758 L46.6748073,183.688315 Z" id="Path-4" fill="#2582CD" transform="translate(44.085169, 101.936857) rotate(21.000000) translate(-44.085169, -101.936857) "></path>
+                <path d="M97.1426392,8 C97.1426392,8 127.550506,14.2999447 128.807514,23.3075396 C130.064523,32.3151344 125.203169,42.3644806 113.098738,51.6749166 C81.1505173,76.2487157 47,90 47,90" id="Path-2" stroke-width="6"></path>
+            </g>
+            <g id="light" transform="translate(185.000000, 16.000000)">
+                <path d="M-82.7921898,141.587316 C56.0386588,114.199453 206.174181,145.013941 206.174181,145.013941" id="Path-3" stroke="#FFEE42" fill="#FFEE42" transform="translate(61.690996, 137.628940) scale(-1, 1) rotate(-112.000000) translate(-61.690996, -137.628940) "></path>
+                <path d="M5,249.405961 C67.8277262,239.341465 150.960225,249.446382 206.773548,251.049184 C262.586871,252.651987 249.718255,260.912178 249.718255,260.912178" id="Path-3" stroke="#FFEE42" fill="#FFEE42" transform="translate(128.000000, 252.956089) scale(-1, 1) rotate(3.000000) translate(-128.000000, -252.956089) "></path>
+                <circle id="Oval" stroke="#EE532F" fill="#EE532F" cx="11" cy="260" r="6"></circle>
+            </g>
+            <g id="The" transform="translate(-0.000000, 0.000000)" stroke="#EE532F" fill="#EE532F">
+                <path d="M-0.000181857877,10.7452706 C166.7124,-15.2029846 347,14 347,14" id="Path-3" transform="translate(173.499909, 7.000000) scale(1, -1) translate(-173.499909, -7.000000) "></path>
+                <path d="M169,197.344794 C174.284834,-262.310013 180,255 180,255" id="Path-3" transform="translate(174.500000, 131.000000) scale(-1, 1) translate(-174.500000, -131.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

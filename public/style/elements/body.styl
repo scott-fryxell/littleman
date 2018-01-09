@@ -10,15 +10,7 @@ body
   border: 0rem solid editor-on-color
   padding: base-line
   line-height: remove-unit(base-line)
-  // user-select: none
-
-  &[contenteditable]
-    // user-select: auto
-    border: base-line solid editor-on-color
-    border-top: none
-    border-bottom:none
-    padding-left: 0
-    padding-right: 0
+  user-select: none
 
   & > header
   & > main
@@ -45,12 +37,12 @@ body
     width: 100vw
     @media screen and (min-width: max-screen + 10rem)
       height: base-line * 1.5
-    & svg
-      height:base-line * 1.5
-      width:base-line * 3
+    & img
+      height:base-line * 6
+      width:base-line * 12
       margin-left: base-line
-      stroke:yellow
-      fill:red
+      stroke:pink
+      fill:blue
       opacity:0.4
       stroke-width:5
       @media screen and (min-width: max-screen + 10rem)
