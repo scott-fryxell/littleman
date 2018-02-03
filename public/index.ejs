@@ -1,20 +1,28 @@
+<style media="screen">
+  .hide {
+    display: none;
+  }
+</style>
+<nav>
+  <a class="black" tabindex="-1" href="/mark_gardner">mark</a>
+  <a class="yellow" tabindex="-1" href="/martin_newell">martin</a>
+  <a class="red" tabindex="-1" href="/esmerelda">esmerelda</a>
+  <textarea class="blue" tabindex="1" placeholder="Wat?" v-model="new_post" v-on:focusout="addPost"></textarea>
+</nav>
+<nav class="hide">
+  <a class="pink"></a>
+  <a class="grey"></a>
+  <a class="orange"></a>
+  <a class="green"></a>
+</nav>
 
-<section id="posts">
-  <header>
-    <textarea tabindex="1" placeholder="Wat?" v-model="new_post" v-on:focusout="addPost"></textarea>
-  </header>
-  <section itemscope itemtype="http://schema.org/blog">
-    <article  v-for="post in posts" itemscope itemtype="http://schema.org/SocialMediaPosting">
-      <header><time itemprop="created_at" :datetime="post.created_at"></time></header>
-      <p itemprop="articleBody">{{post.articleBody}}</p>
-    </article>
-  </section>
- </section>
-
-<template id="assertions">
-  the page wil load from cache first
-  the page will persist to firebase
-</template>
+<details id="posts" class="grey" style="display:none" itemscope itemtype="http://schema.org/blog">
+  <summary>Posts</summary>
+  <article  v-for="post in posts" itemscope itemtype="http://schema.org/SocialMediaPosting">
+    <header><time itemprop="created_at" :datetime="post.created_at"></time></header>
+    <blockquote itemprop="articleBody">{{post.articleBody}}</blockquote>
+  </article>
+</details>
 
 <script id="app">
   var storage = {
@@ -32,7 +40,7 @@
   }
 
   var app = new Vue({
-    el:   'section#posts',
+    el:   'details#posts',
     data: {
       posts: storage.load(),
       new_post: ''

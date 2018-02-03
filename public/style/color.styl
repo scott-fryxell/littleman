@@ -1,17 +1,15 @@
 
-
 // version 3
 black = #1F232C
 white = #F7F7F7
 grey = rgba(155	155	155	1)
-
 pink = rgba(235	87	191	1)
 red = rgba(238	83	47	1)
 blue = rgba(37	130	205	1)
 yellow = rgba(255	238	66	1)
 
 editor-on-color = red
-published-color = green
+published-color = blue
 
 highlight         = -webkit-linear-gradient( top left, transparent, white  )
 reverse-highlight = -webkit-linear-gradient( top left, transparent, black  )
@@ -22,14 +20,22 @@ reverse-highlight = -webkit-linear-gradient( top left, transparent, black  )
   background-color: white
 .grey
   background-color: grey
+  color: black
 .yellow
   background-color: yellow
+  color:white
+  text-shadow: 1px 0px 0px black
+  &:hover
+    color:pink
 .green
   background-color: green
 .orange
   background-color: orange
 .red
   background-color: red
+  color:white
+  &:hover
+    color: blue
 .pink
   background-color: pink
 .blue
