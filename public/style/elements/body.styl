@@ -11,8 +11,9 @@ body
   line-height: remove-unit(base-line)
   user-select: none
 
-  & > *
-    outline:0.125vmin solid blue
+  // & > *
+  //   outline:0.125vmin solid blue
 
-  & > header > h1
-      text-align: left
+  & > header
+    margin: base-line 0
+    between: width, round(base-line * 25, 3), round(base-line * 25, 3)
