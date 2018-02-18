@@ -1,19 +1,15 @@
 @require "../variables"
 
 body
+  padding: base-line
   min-height:100vh
   border:none
   display:flex
   flex-direction: column
   justify-content: flex-start
   align-items: center;
-
   line-height: remove-unit(base-line)
   user-select: none
 
-  // & > *
-  //   outline:0.125vmin solid blue
-
   & > header
-    margin: base-line 0
-    between: width, round(base-line * 25, 3), round(base-line * 25, 3)
+    width: 100%
