@@ -23,7 +23,7 @@ Raised in a blue collar christian household, religious themes remain a ubiquitou
 **Nadair Asghari** is a multi media artist. He often works with plexiglass layered over spray paint and soft pastel. He describes his work as playful abstraction.
 
 <figure>
-  <img src="close_1.png">
+  <img src="close_1.jpg">
   <img src="close_2.jpg">
   <img src="close_3.jpg">
 </figure>
