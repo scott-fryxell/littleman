@@ -1,0 +1,38 @@
+
+nav
+  margin-top: base-line
+  display: flex
+  flex-direction:column
+  align-content: flex-start
+  align-items:center
+  align-content:space-around;
+
+  & > a
+    between: font-size, min-font, max-font, min-screen, max-screen
+    color: white
+    padding-top: base-line
+    text-shadow: none
+    text-shadow: 0px 1px 3px black
+    font-weight: bold
+    display:inline-block
+    width: 100vw
+    margin-bottom: base-line
+    height: 20vh
+    border-radius: .22rem
+    text-transform: capitalize
+    text-align: center
+    vertical-align: middle
+
+    &:nth-child(odd)
+      // margin-right: base-line
+    &:hover
+      color: red
+    &.yellow
+      color:red
+      text-shadow: 1px 0px 0px black
+      &:hover
+        color:pink
+    &.red
+      color:white
+      &:hover
+        color: blue
