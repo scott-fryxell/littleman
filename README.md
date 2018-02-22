@@ -1,2 +1,6 @@
-# littleman
-Little man is a CMS framework. for builing SEO friendly highly customiable websites for products stories
+# hit gallery
+is a static website showcasing San Francisco based artists
+
+## deploy
+    npm run build
+    firebae deploy
