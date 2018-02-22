@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "harp server ./public",
-    "build": "harp compile ./public --output ../../scott-fryxell.github.io",
+    "build": "harp compile ./public --output ../dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
