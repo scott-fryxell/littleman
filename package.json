@@ -1,11 +1,11 @@
 {
-  "name": "littleman",
+  "name": "hit.gallery",
   "version": "1.0.0",
   "description": "CMS ",
   "main": "index.js",
   "scripts": {
     "dev": "harp server ./public",
-    "build": "harp compile ./public --output ../../scott-fryxell.github.io",
+    "build": "harp compile ./public --output ../dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,13 +19,6 @@
   },
   "homepage": "https://github.com/scott-fryxell/littleman#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-coffee": "^2.3.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-include": "^2.3.1",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
     "harp": "^0.25.0"
   },
   "keywords": []
