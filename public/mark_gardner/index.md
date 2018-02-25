@@ -1,8 +1,9 @@
-# Mark Gardner on growing up through his sudden fame and the evolution of Ride
 
 <figure>
 ![cover](cover.jpg)
 </figure>
+
+# Mark Gardner on growing up through his sudden fame and the evolution of Ride
 
 *Ride started in 1988, at the time both lead singer Mark Gardner and guitar player Andy Bell fresh out of high school. The band was almost discovered by Alan Mcgee and signed to Creation Records. They rapidly surpassed even their own conceptions of success. Just two years after their inception all three of their eps had hit the Uk top 75, at the time lead singer Mark Gardner was only nineteen. Gardner now 47 lives in his home town of Oxford splitting his time between producing, being a father and performing in Ride. We talked about suburban mundanity and his abrupt fame.*
 

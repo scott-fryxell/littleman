@@ -1,7 +1,4 @@
 @require "../variables"
-
-// *
-//   outline:1px solid blue
 body
   min-height:100vh
   border:none
@@ -9,7 +6,9 @@ body
   flex-direction: column
   align-items: center
   justify-content: flex-start
-  border: 0rem solid editor-on-color
+  border: ( base-line / 2 ) solid blue
+  box-shadow: inset (base-line * 5) base-line gold
+  box-shadow: -1px -1px -3px blue
   padding: base-line
   line-height: remove-unit(base-line)
   user-select: none
@@ -33,7 +32,13 @@ body
     left:0
 
   & > header
-    // width:100vw
-    // justify-content: flex-start
+    display:flex
+    flex-direction: row
+    margin: base-line 0 
+    width:100vw
+    justify-content: space-around
+    & > h1
+      width:30vw
+      line-height: ( base-line * 2 )
     & img
-      height:(base-line * 2.75)
+      height:(base-line * 5)
