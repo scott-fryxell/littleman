@@ -1,11 +1,10 @@
 {
   "name": "littleman",
   "version": "1.0.0",
-  "description": "CMS ",
-  "main": "index.js",
+  "description": "nothin now.",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
+
   },
   "repository": {
     "type": "git",
